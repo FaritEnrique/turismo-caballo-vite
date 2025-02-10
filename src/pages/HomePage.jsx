@@ -1,0 +1,158 @@
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { 
+    FaWhatsappSquare, 
+    FaFacebookSquare, 
+    FaTwitterSquare, 
+    FaChevronLeft, 
+    FaChevronRight 
+} from "react-icons/fa";
+
+const HomePage = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const slides = [
+        "https://i.postimg.cc/qvnPs6KM/carrusel01.jpg",
+        "https://i.postimg.cc/1XfTf8PS/carrusel02.jpg",
+        "https://i.postimg.cc/fWrp1fjR/carrusel03.jpg",
+        "https://i.postimg.cc/jjtFygKZ/carrusel04.jpg",
+        "https://i.postimg.cc/50kKdfzR/carrusel05.jpg",
+        "https://i.postimg.cc/qBN4tR1g/carrusel06.jpg",
+    ];
+
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    };
+
+    useEffect(() => {
+        const interval = setInterval(nextSlide, 5000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const handleShare = (platform) => {
+        const url = window.location.href;
+        const text = "Descubre la magia de la selva amazónica con Turismo en Caballo Cocha.";
+        
+        if (platform === "whatsapp") {
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text + " " + url)}`, "_blank");
+        } else if (platform === "facebook") {
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, "_blank");
+        } else if (platform === "twitter") {
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, "_blank");
+        }
+    };
+
+    return (
+        <div className="bg-gray-200 mb-4">
+            {/* Sección de Bienvenida */}
+            <section className="max-w-[1300px] mx-auto rounded-xl p-4 mb-4">
+                <div className="mb-4">
+                    <h1 className="text-4xl font-bold text-teal-800 text-center">
+                        Bienvenido al Turismo en Caballo Cocha
+                    </h1>
+                    <p className="text-gray-700 text-xl mt-4 text-center">
+                        Descubre la Magia de la Selva Amazónica con Nuestros Increíbles Paquetes Turísticos.
+                        Explora la Naturaleza y Vive Aventuras Inolvidables.
+                    </p>
+                </div>
+
+                {/* Logo y portada */}
+                <div className="flex flex-wrap justify-center items-center">
+                    <div className="w-1/5">
+                        <img
+                            src="/images/logo_cuadrado.png"
+                            alt="Logo Turismo Caballo Cocha"
+                            className="object-contain"
+                        />
+                    </div>
+                    <div className="justify-center w-4/5 rounded-xl">
+                        <img src="https://i.postimg.cc/3NjTKyZw/Portada.jpg" alt="Plaza Caballo Cocha" />
+                    </div>
+                </div>
+
+                {/* Botones de compartir */}
+                <div className="flex justify-center gap-4 bg-white py-4">
+                    <button
+                        onClick={() => handleShare("whatsapp")}
+                        className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-green-500 hover:bg-green-600 transition-all duration-300"
+                    >
+                        <FaWhatsappSquare size={30} />
+                        <span className="hidden sm:block">Compartir en WhatsApp</span>
+                    </button>
+                    <button
+                        onClick={() => handleShare("facebook")}
+                        className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300"
+                    >
+                        <FaFacebookSquare size={30} />
+                        <span className="hidden sm:block">Compartir en Facebook</span>
+                    </button>
+                    <button
+                        onClick={() => handleShare("twitter")}
+                        className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-[#1DA1F2] hover:bg-[#1A91D2] transition-all duration-300"
+                    >
+                        <FaTwitterSquare size={30} />
+                        <span className="hidden sm:block">Compartir en Twitter</span>
+                    </button>
+                </div>
+            </section>
+
+            {/* Contenido principal */}
+            <section className="max-w-[1300px] mx-auto rounded-xl p-4 flex gap-6">
+                {/* Barra lateral */}
+                <aside className="w-1/4 space-y-6">
+                    {/* Destacados */}
+                    <div className="bg-green-300 p-4 rounded-lg shadow-md">
+                        <h1 className="font-bold text-center text-lg text-green-900">Destacados</h1>
+                        <ul className="space-y-2 mt-2">
+                            <li><Link to="/localidades" className="block hover:text-green-700 font-semibold">Localidades Importantes</Link></li>
+                            <li><Link to="/festividades" className="block hover:text-green-700 font-semibold">Festividades de la Región</Link></li>
+                            <li><Link to="/flora" className="block hover:text-green-700 font-semibold">Flora</Link></li>
+                            <li><Link to="/fauna" className="block hover:text-green-700 font-semibold">Fauna</Link></li>
+                            <li><Link to="#" className="block hover:text-green-700 font-semibold">Panel Fotográfico</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Video */}
+                    <div className="bg-white p-4 rounded-lg shadow-md">
+                        <h1 className="font-bold text-center text-lg text-gray-800">Video</h1>
+                        <h2 className="text-center text-gray-600 mt-1">Santa Rosa del Caño</h2>
+                        <iframe
+                            className="w-full h-48 rounded-lg mt-2"
+                            src="https://www.youtube.com/embed/cFoufhTlTKI"
+                            title="YouTube video Santa Rosa del Caño"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </aside>
+
+                {/* Carrusel */}
+                <div className="w-3/4 relative">
+                    <div className="relative w-full overflow-hidden rounded-lg shadow-lg">
+                        <img src={slides[currentSlide]} className="w-full transition-transform duration-700 ease-in-out" alt="Imagen Carrusel" />
+                    </div>
+
+                    {/* Controles del carrusel */}
+                    <button
+                        onClick={prevSlide}
+                        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/60 transition-all"
+                    >
+                        <FaChevronLeft size={25} />
+                    </button>
+                    <button
+                        onClick={nextSlide}
+                        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/60 transition-all"
+                    >
+                        <FaChevronRight size={25} />
+                    </button>
+                </div>
+            </section>
+        </div>
+    );
+};
+
+export default HomePage;
