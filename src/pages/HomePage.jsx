@@ -104,17 +104,16 @@ const HomePage = () => {
                 {/* Barra lateral */}
                 <aside className="w-1/4 space-y-6">
                     {/* Destacados */}
-                    <div className="bg-green-300 p-4 rounded-lg shadow-md">
-                        <h1 className="font-bold text-center text-lg text-green-900">Destacados</h1>
+                    <div className="bg-gradient-to-r from-teal-700 via-teal-800 to-teal-900 p-4 rounded-lg shadow-md text-white">
+                        <h1 className="font-bold text-center text-lg">Destacados</h1>
                         <ul className="space-y-2 mt-2">
-                            <li><Link to="/localidades" className="block hover:text-green-700 font-semibold">Localidades Importantes</Link></li>
-                            <li><Link to="/festividades" className="block hover:text-green-700 font-semibold">Festividades de la Región</Link></li>
-                            <li><Link to="/flora" className="block hover:text-green-700 font-semibold">Flora</Link></li>
-                            <li><Link to="/fauna" className="block hover:text-green-700 font-semibold">Fauna</Link></li>
-                            <li><Link to="#" className="block hover:text-green-700 font-semibold">Panel Fotográfico</Link></li>
+                            <li><Link to="/localidades" className="block hover:text-yellow-300 font-semibold">Localidades Importantes</Link></li>
+                            <li><Link to="/festividades" className="block hover:text-yellow-300 font-semibold">Festividades de la Región</Link></li>
+                            <li><Link to="/flora" className="block hover:text-yellow-300 font-semibold">Flora</Link></li>
+                            <li><Link to="/fauna" className="block hover:text-yellow-300 font-semibold">Fauna</Link></li>
+                            <li><Link to="#" className="block hover:text-yellow-300 font-semibold">Panel Fotográfico</Link></li>
                         </ul>
                     </div>
-
                     {/* Video */}
                     <div className="bg-white p-4 rounded-lg shadow-md">
                         <h1 className="font-bold text-center text-lg text-gray-800">Video</h1>
@@ -129,7 +128,6 @@ const HomePage = () => {
                         ></iframe>
                     </div>
                 </aside>
-
                 {/* Carrusel */}
                 <div className="w-3/4 relative">
                     <div className="relative w-full overflow-hidden rounded-lg shadow-lg">
@@ -139,16 +137,26 @@ const HomePage = () => {
                     {/* Controles del carrusel */}
                     <button
                         onClick={prevSlide}
-                        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/60 transition-all"
+                        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-teal-800/70 text-white p-3 rounded-full hover:bg-teal-900 transition-all"
                     >
                         <FaChevronLeft size={25} />
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/60 transition-all"
+                        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-teal-800/70 text-white p-3 rounded-full hover:bg-teal-900 transition-all"
                     >
                         <FaChevronRight size={25} />
                     </button>
+                    {/* Indicadores del carrusel */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        {slides.map((_, index) => (
+                            <button
+                                key={index}
+                                className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index ? "bg-teal-500" : "bg-gray-400"}`}
+                                onClick={() => setCurrentSlide(index)}
+                            ></button>
+                        ))}
+                    </div>
                 </div>
             </section>
         </div>
