@@ -65,8 +65,12 @@ const Header = () => {
 
             {/* Modal body */}
             <div className="p-4 space-y-4">
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                Descubre quiénes somos y nuestra misión en el turismo en Caballo Cocha. Queremos ofrecerte las mejores experiencias en la selva amazónica.
+            
+              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 text-justify">
+                Gracias por visitar nuestro sitio web, <strong>DANIKAH TRAVEL</strong>, una agencia líder en el área de turismo y vuelos aéreos. Contamos con atención especializada en los más diversos productos del rubro, como asesoría y venta de pasajes aéreos nacionales e internacionales, paquetes turísticos, cruceros marítimos, excursiones, y mucho más.<br />
+              </p>
+              <p className="text-base text-gray-500 dark:text-gray-400 text-justify">
+                <strong>DANIKAH TRAVEL</strong> fue fundada en el año 2018 en la ciudad de Iquitos, Perú. Iniciamos ofreciendo servicios de venta de boletos aéreos nacionales y, prontamente, expandimos nuestra oferta a todo el país. Hoy, consolidamos una amplia variedad de servicios turísticos con las mejores alternativas para nuestros clientes.
               </p>
             </div>
 
