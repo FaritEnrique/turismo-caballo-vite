@@ -111,7 +111,7 @@ const HomePage = () => {
                             <li><Link to="/festividades" className="block hover:text-yellow-300 font-semibold">Festividades de la Región</Link></li>
                             <li><Link to="/flora" className="block hover:text-yellow-300 font-semibold">Flora</Link></li>
                             <li><Link to="/fauna" className="block hover:text-yellow-300 font-semibold">Fauna</Link></li>
-                            <li><Link to="#" className="block hover:text-yellow-300 font-semibold">Panel Fotográfico</Link></li>
+                            <li><Link to="/galeria" className="block hover:text-yellow-300 font-semibold">Panel Fotográfico</Link></li>
                         </ul>
                     </div>
                     {/* Video */}

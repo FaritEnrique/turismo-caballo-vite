@@ -12,6 +12,7 @@ import LocationPage from './pages/LocationPage';
 import LocalidadesPage from './pages/LocalidadesPage';
 import PaquetesPage from './pages/PaquetesPage';
 import PromocionesPage from './pages/PromocionesPage';
+import GaleriaPage from './pages/GaleriaPage';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/localidades" element={<LocalidadesPage />} />
             <Route path="/paquetes" element={<PaquetesPage />} />
             <Route path="/promociones" element={<PromocionesPage />} />
+            <Route path="/galeria" element={<GaleriaPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
