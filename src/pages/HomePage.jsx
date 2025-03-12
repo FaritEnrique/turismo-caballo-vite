@@ -60,43 +60,67 @@ const HomePage = () => {
                 </div>
 
                 {/* Logo y portada */}
-                <div className="flex flex-wrap justify-center items-center">
-                    <div className="w-1/5">
+                <div className="flex flex-col lg:flex-row justify-center items-center gap-4">
+                    {/* Logo */}
+                    <div className="w-full md:w-auto">
                         <img
                             src="/images/logo_cuadrado.png"
                             alt="Logo Turismo Caballo Cocha"
-                            className="object-contain"
+                            className="object-contain w-48 md:w-64 mx-auto" // Ajuste del ancho del logo
                         />
                     </div>
-                    <div className="justify-center w-4/5 rounded-xl">
-                        <img src="https://i.postimg.cc/3NjTKyZw/Portada.jpg" alt="Plaza Caballo Cocha" />
+                    {/* Portada */}
+                    <div className="w-full rounded-xl">
+                        <img
+                            src="https://i.postimg.cc/3NjTKyZw/Portada.jpg"
+                            alt="Plaza Caballo Cocha"
+                            className="w-full rounded-xl"
+                        />
                     </div>
                 </div>
 
                 {/* Botones de compartir */}
-                <div className="flex justify-center gap-4 bg-white py-4">
-                    <button
-                        onClick={() => handleShare("whatsapp")}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-green-500 hover:bg-green-600 transition-all duration-300"
-                    >
-                        <FaWhatsappSquare size={30} />
-                        <span className="hidden sm:block">Compartir en WhatsApp</span>
-                    </button>
-                    <button
-                        onClick={() => handleShare("facebook")}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300"
-                    >
-                        <FaFacebookSquare size={30} />
-                        <span className="hidden sm:block">Compartir en Facebook</span>
-                    </button>
-                    <button
-                        onClick={() => handleShare("twitter")}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-[#1DA1F2] hover:bg-[#1A91D2] transition-all duration-300"
-                    >
-                        <FaTwitterSquare size={30} />
-                        <span className="hidden sm:block">Compartir en Twitter</span>
-                    </button>
+                <div className="bg-white py-4">
+                    <div>
+                        <h1 className="block sm:hidden w-full font-bold text-teal-900 text-center">Compatir en:</h1>
+                    </div>
+                    <div className="flex justify-center gap-4 bg-white py-4">
+                        <button
+                            onClick={() => handleShare("whatsapp")}
+                            className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-green-500 hover:bg-green-600 transition-all duration-300"
+                        >
+                            <FaWhatsappSquare size={30} />
+                            <span className="hidden sm:block">Compartir en WhatsApp</span>
+                        </button>
+                        <button
+                            onClick={() => handleShare("facebook")}
+                            className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300"
+                        >
+                            <FaFacebookSquare size={30} />
+                            <span className="hidden sm:block">Compartir en Facebook</span>
+                        </button>
+                        <button
+                            onClick={() => handleShare("twitter")}
+                            className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-[#1DA1F2] hover:bg-[#1A91D2] transition-all duration-300"
+                        >
+                            <FaTwitterSquare size={30} />
+                            <span className="hidden sm:block">Compartir en Twitter</span>
+                        </button>
+                    </div>
                 </div>
+            </section>
+            <section className="max-w-[1300px] mx-auto rounded-xl p-4 mb-4 ">
+            <div className="bg-gradient-to-r from-teal-700 via-teal-800 to-teal-900 p-4 rounded-lg 
+                shadow-md text-white hidden sm:w-full sm:block sm:h-65 md:h-80">
+                <h1 className="font-bold text-center text-lg">Destacados</h1>
+                <ul className="space-y-2 mt-2">
+                    <li><Link to="/localidades" className="block hover:text-yellow-300 font-semibold">Localidades Importantes</Link></li>
+                    <li><Link to="/festividades" className="block hover:text-yellow-300 font-semibold">Festividades de la Región</Link></li>
+                    <li><Link to="/flora" className="block hover:text-yellow-300 font-semibold">Flora</Link></li>
+                    <li><Link to="/fauna" className="block hover:text-yellow-300 font-semibold">Fauna</Link></li>
+                    <li><Link to="/galeria" className="block hover:text-yellow-300 font-semibold">Panel Fotográfico</Link></li>
+                </ul>
+            </div>
             </section>
 
             {/* Contenido principal */}
@@ -104,7 +128,8 @@ const HomePage = () => {
                 {/* Barra lateral */}
                 <aside className="w-1/4 space-y-6">
                     {/* Destacados */}
-                    <div className="bg-gradient-to-r from-teal-700 via-teal-800 to-teal-900 p-4 rounded-lg shadow-md text-white">
+                    <div className="bg-gradient-to-r from-teal-700 via-teal-800 to-teal-900 p-4 rounded-lg 
+                    shadow-md text-white hidden sm:w-full sm:block sm:h-65 md:h-80">
                         <h1 className="font-bold text-center text-lg">Destacados</h1>
                         <ul className="space-y-2 mt-2">
                             <li><Link to="/localidades" className="block hover:text-yellow-300 font-semibold">Localidades Importantes</Link></li>
@@ -115,21 +140,20 @@ const HomePage = () => {
                         </ul>
                     </div>
                     {/* Video */}
-                    <div className="bg-white p-4 rounded-lg shadow-md">
+                    <div className="bg-white p-4 rounded-lg shadow-md hidden lg:block">
                         <h1 className="font-bold text-center text-lg text-gray-800">Video</h1>
                         <h2 className="text-center text-gray-600 mt-1">Santa Rosa del Caño</h2>
                         <iframe
-                            className="w-full h-48 rounded-lg mt-2"
+                            className="w-full h-48 rounded-lg mt-2 border-0"
                             src="https://www.youtube.com/embed/cFoufhTlTKI"
                             title="YouTube video Santa Rosa del Caño"
-                            frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
                         ></iframe>
                     </div>
                 </aside>
                 {/* Carrusel */}
-                <div className="w-3/4 relative">
+                <div className="hidden sm:w-3/4 sm:block relative">
                     <div className="relative w-full overflow-hidden rounded-lg shadow-lg">
                         <img src={slides[currentSlide]} className="w-full transition-transform duration-700 ease-in-out" alt="Imagen Carrusel" />
                     </div>
@@ -157,6 +181,19 @@ const HomePage = () => {
                             ></button>
                         ))}
                     </div>
+                </div>
+            </section>
+            <section className="max-w-[1300px] mx-auto rounded-xl p-4 block lg:hidden">
+                <div className="bg-white p-4 rounded-lg shadow-md">
+                    <h1 className="font-bold text-center text-lg text-gray-800">Video</h1>
+                    <h2 className="text-center text-gray-600 mt-1">Santa Rosa del Caño</h2>
+                    <iframe
+                        className="w-full h-48 rounded-lg mt-2 border-0"
+                        src="https://www.youtube.com/embed/cFoufhTlTKI"
+                        title="YouTube video Santa Rosa del Caño"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                    ></iframe>
                 </div>
             </section>
         </div>
