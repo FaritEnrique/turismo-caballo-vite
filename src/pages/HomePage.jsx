@@ -109,9 +109,9 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
-            <section className="max-w-[1300px] mx-auto rounded-xl p-4 mb-4 ">
+            <section className="max-w-[1300px] mx-auto rounded-xl p-4 block sm:hidden">
             <div className="bg-gradient-to-r from-teal-700 via-teal-800 to-teal-900 p-4 rounded-lg 
-                shadow-md text-white hidden sm:w-full sm:block sm:h-65 md:h-80">
+                shadow-md text-white w-full">
                 <h1 className="font-bold text-center text-lg">Destacados</h1>
                 <ul className="space-y-2 mt-2">
                     <li><Link to="/localidades" className="block hover:text-yellow-300 font-semibold">Localidades Importantes</Link></li>
@@ -121,6 +121,37 @@ const HomePage = () => {
                     <li><Link to="/galeria" className="block hover:text-yellow-300 font-semibold">Panel Fotográfico</Link></li>
                 </ul>
             </div>
+            </section>
+            <section className="max-w-[1300px] mx-auto rounded-xl px-4 block sm:hidden">
+                <div className="w-full relative">
+                    <div className="relative w-full overflow-hidden rounded-lg shadow-lg">
+                        <img src={slides[currentSlide]} className="w-full transition-transform duration-700 ease-in-out" alt="Imagen Carrusel" />
+                    </div>
+
+                    {/* Controles del carrusel */}
+                    <button
+                        onClick={prevSlide}
+                        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-teal-800/70 text-white p-3 rounded-full hover:bg-teal-900 transition-all"
+                    >
+                        <FaChevronLeft size={25} />
+                    </button>
+                    <button
+                        onClick={nextSlide}
+                        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-teal-800/70 text-white p-3 rounded-full hover:bg-teal-900 transition-all"
+                    >
+                        <FaChevronRight size={25} />
+                    </button>
+                    {/* Indicadores del carrusel */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        {slides.map((_, index) => (
+                            <button
+                                key={index}
+                                className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index ? "bg-teal-500" : "bg-gray-400"}`}
+                                onClick={() => setCurrentSlide(index)}
+                            ></button>
+                        ))}
+                    </div>
+                </div>
             </section>
 
             {/* Contenido principal */}
@@ -196,6 +227,75 @@ const HomePage = () => {
                     ></iframe>
                 </div>
             </section>
+            <section className="max-w-[1300px] w-full bg-teal-600 mx-auto rounded-xl p-4 flex flex-col md:flex-row gap-4 items-start">
+                <div className="bg-white p-4 rounded-lg shadow-md w-full md:w-3/5">
+                    <h1 className="text-center font-bold text-lg sm:text-xl lg:text-2xl text-teal-800">
+                        Nuestro Compromiso con el Medio Ambiente y los Clientes
+                    </h1>
+                    <div className="bg-white p-4 rounded-lg shadow-md mt-4">
+                        <p className="text-gray-900 text-justify">
+                            Nos comprometemos a brindar un servicio de óptima calidad a nuestros clientes, considerando el respeto al medio ambiente. <br />
+                            Adoptamos las medidas necesarias para prevenir la contaminación, procurando en lo posible, reducir sistemáticamente los residuos, reciclándolos y reutilizándolos. <br />
+                            Para nosotros, el uso eficiente de recursos naturales, materias primas y energía, es de suma importancia.
+                        </p>
+                    </div>
+                </div>
+                <div className="rounded-lg shadow-md border border-gray-400 w-full md:w-2/5">
+                    <img src="/images/Medio_Ambiente.jpeg" alt="Foto Compromiso - Turismo Caballococha" className="w-full h-auto rounded-lg"/>
+                </div>
+            </section>
+            <section className="max-w-[1300px] w-full bg-teal-600 mx-auto rounded-xl p-4 mt-4">
+                <div>
+                    <h1 className="text-center font-bold text-lg sm:text-xl lg:text-2xl text-teal-800 p-4 rounded bg-white shadow-md">
+                        Nuestros Servicios
+                    </h1>
+                    <p className="text-gray-900 text-justify mt-4 bg-yellow-50 p-4 rounded-lg shadow-md">
+                        La contratacion del <Link to="/paquetes" className="underline" 
+                        title="Ver detalles del paquete turístico - Caballococha">paquete</Link>, contempla la
+                        prestación de servicios adicionales, que no son propios del tour a Caballo Cocha, 
+                        para garantizar la comodidad y seguridad de nuestros clientes.
+                    </p>
+                </div>
+                <div className="mt-4 p-4 rounded-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 bg-gray-400">
+                    <div>
+                        <div>
+                            <img src="/images/Aeropuerto_Iquitos.png" alt="Aeropuerto de Iquitos, punto de llegada para el turismo en Caballococha" className="rounded-xl" />
+                        </div>
+                        <div className="p-2 bg-slate-100">
+                            <p className="text-black">
+                                Como parte del servicio, está previsto el recojo en el aeropuerto, ya sea de Iquitos o Leticia. 
+                                Asimismo, también se tiene contemplado el desplazamiento a la Ciudad de Caballococha en 
+                                deslizador, garantizándose una total comodidad.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/images/Alojamiento.png" alt="Aeropuerto de Iquitos, punto de llegada para el turismo en Caballococha" className="rounded-xl" />
+                        </div>
+                        <div className="p-2 bg-slate-100">
+                            <p className="text-black">
+                                Se proporcionará alojamiento a los clientes en cómodas habitaciones, con camas de 2 plazas, 
+                                con acceso a todos los servicios, incluyendo aire acondicionado.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/images/Comida.png" alt="Aeropuerto de Iquitos, punto de llegada para el turismo en Caballococha" className="rounded-xl" />
+                        </div>
+                        <div className="p-2 bg-slate-100">
+                            <p className="text-black">
+                                El servicio de alimentación, se proporcionará, considerando las normas sanitarias y el uso de 
+                                productos de muy buena calidad, para garantizar nuestros productos. Ser servirán platos típicos 
+                                de la zona, en el desayuno, almuerzo y cena. Se estará pendiente de los clientes, con sus 
+                                requerimientos excepcionales, ya sea por salud u otro motivo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     );
 };
