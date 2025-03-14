@@ -271,7 +271,7 @@ const HomePage = () => {
                         Nuestro Compromiso con el Medio Ambiente y los Clientes
                     </h1>
                     <div className="bg-white p-4 rounded-lg shadow-md mt-4">
-                        <p className="text-gray-900 text-justify">
+                        <p className="text-gray-900 text-justify font-medium">
                             Nos comprometemos a brindar un servicio de óptima calidad a nuestros clientes, considerando el respeto al medio ambiente. <br />
                             Adoptamos las medidas necesarias para prevenir la contaminación, procurando en lo posible, reducir sistemáticamente los residuos, reciclándolos y reutilizándolos. <br />
                             Para nosotros, el uso eficiente de recursos naturales, materias primas y energía, es de suma importancia.
