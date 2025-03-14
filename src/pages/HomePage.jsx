@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { 
     FaWhatsappSquare, 
@@ -7,8 +7,46 @@ import {
     FaChevronLeft, 
     FaChevronRight 
 } from "react-icons/fa";
+import { TbPointFilled } from "react-icons/tb";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
+
+    const itemsRef = useRef([]);
+
+    useEffect(() => {
+        if (!itemsRef.current || itemsRef.current.length === 0) return;
+    
+        gsap.utils.toArray(itemsRef.current).forEach((el, index) => {
+            gsap.fromTo(
+                el,
+                {
+                    opacity: 0,
+                    x: index % 2 === 0 ? -100 : 100,  // Alterna dirección de entrada
+                    rotation: index % 2 === 0 ? -30 : 30 // Alterna rotación
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    rotation: 0,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 70%",
+                        toggleActions: "play none none reverse",
+                    },
+                }
+            );
+        });
+    
+        return () => {
+            ScrollTrigger.getAll().forEach((st) => st.kill());
+        };
+    }, []);
+
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
         "https://i.postimg.cc/qvnPs6KM/carrusel01.jpg",
@@ -249,7 +287,7 @@ const HomePage = () => {
                     <h1 className="text-center font-bold text-lg sm:text-xl lg:text-2xl text-teal-800 p-4 rounded bg-white shadow-md">
                         Nuestros Servicios
                     </h1>
-                    <p className="text-gray-900 text-justify mt-4 bg-yellow-50 p-4 rounded-lg shadow-md">
+                    <p className="text-gray-900 text-justify mt-4 bg-yellow-50 p-4 rounded-lg shadow-md font-medium">
                         La contratacion del <Link to="/paquetes" className="underline" 
                         title="Ver detalles del paquete turístico - Caballococha">paquete</Link>, contempla la
                         prestación de servicios adicionales, que no son propios del tour a Caballo Cocha, 
@@ -294,6 +332,122 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section            
+                className="max-w-[1300px] w-full bg-teal-600 mx-auto rounded-xl p-4 mt-4"
+                aria-label="Programa Turístico"
+                title="Descubre la magia del turismo en Iquitos y Caballococha, Perú"
+            >
+                <h1             
+                    className="text-lg md:text-xl lg:text-2xl font-bold text-center rounded-xl p-2 
+                        bg-yellow-50 text-teal-900"
+                    title="Programa Turístico Iquitos Caballococha"
+                >
+                    Programa Turístico
+                </h1>
+                <div
+                    className="bg-yellow-50 rounded-xl mt-4 p-4"
+                    title="Actividades Turísiticas en Caballococha - Loreto Iquitos"
+                >
+                    <h2 className="text-center text-teal-900 md:text-lg lg:text-xl font-bold">
+                        Actividades del Progrma Turístico
+                    </h2>
+                    <ul className="font-semibold mt-2">
+                        <li className="flex gap-4 items-center text-amber-950">
+                            <TbPointFilled />
+                            <span>City Tour Caballococha</span>
+                        </li>
+                        <li className="flex gap-4 items-center text-amber-950">
+                            <TbPointFilled />
+                            <span>Visita Comunidad Los Ticunas</span>
+                        </li>
+                        <li className="flex gap-4 items-center text-amber-950">
+                            <TbPointFilled />
+                            <span>Exploración del Río Amazonas</span>
+                        </li>
+                        <li className="flex gap-4 items-center text-amber-950">
+                            <TbPointFilled />
+                            <span>Visita la Comunidad de Vista Alegre</span>
+                        </li>
+                        <li className="flex gap-4 items-center text-amber-950">
+                            <TbPointFilled />
+                            <span>Pesca Artesanal</span>
+                        </li>
+                        <li className="flex gap-4 items-center text-amber-950">
+                            <TbPointFilled />
+                            <span>Exploración de Lago Caballo Cocha</span>
+                        </li>
+                    </ul>
+                    <div className="gap-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-gray-300 rounded-xl p-4">
+                        <div
+                            ref={(el) => (itemsRef.current[0] = el)}
+                            className="border p-2 bg-teal-100 shadow-md rounded-xl bg-[url('/images/Fondo_Laguna.jpeg')] bg-cover bg-center h-auto">
+                            <h2 className="font-bold text-center">Laguna de Caballo Cocha</h2>
+                            <p className="font-medium text-justify">
+                                Está ubicado en la selva baja y limita por el Este con la ciudad de Caballo Cocha, 
+                                por el Sur con la comunidad de Marichin, al Oeste con la Cocha Bufeo y al Norte con 
+                                el río Amazonas. <br /> La laguna de Caballo Cocha y su complejo de cochas están 
+                                alimentados por las aguas del río Amazonas.
+                            </p>
+                        </div>
+                        <div
+                            ref={(el) => (itemsRef.current[1] = el)}
+                            className="border p-2 bg-teal-100 shadow-md rounded-xl bg-[url('/images/Foto_flora.jpg')] bg-cover bg-center h-auto">
+                            <h2 className="font-bold text-center">Flora</h2>
+                            <ul className="font-medium">
+                                {[
+                                    "Manglar Amazónico (Renaco)",
+                                    "Huama",
+                                    "Sensitiva",
+                                    "Lila Amazónica",
+                                    "Bonsay Amazónico",
+                                    "Piri - Piri",
+                                    "Magnolia",
+                                    "Huiririma",
+                                    "Bromelias",
+                                    "Camu - Camu",
+                                ].map((item, index) => (
+                                    <li key={index} className="flex flex-wrap gap-4 items-center">
+                                        <TbPointFilled />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div
+                            ref={(el) => (itemsRef.current[2] = el)}
+                            className="border p-2 bg-teal-100 shadow-md rounded-xl bg-[url('/images/Foto_fauna.png')] bg-cover bg-center h-auto">
+                            <h2 className="font-bold text-center">Aves</h2>
+                            <ul className="font-medium">
+                                {[
+                                    "Tuqui - Tuqui",
+                                    "Pavo Buitre (Rinahui)",
+                                    "Garza Real",
+                                    "Cormonares (Cushuri)",
+                                    "Gaviotas Amazónicas",
+                                    "Camugos",
+                                ].map((item, index) => (
+                                    <li key={index} className="flex flex-wrap gap-4 items-center">
+                                        <TbPointFilled />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div
+                            ref={(el) => (itemsRef.current[3] = el)}
+                            className="border p-2 bg-teal-100 shadow-md rounded-xl bg-[url('/images/Foto_Ayahuasca.png')] bg-cover bg-center h-auto">
+                            <h2 className="font-bold text-center">Ritual de Ayahuasca</h2>
+                            <p className="font-medium text-justify">
+                                La Ayahuasca es una infusión de dos o más plantas amazónicas que da como resultado una bebida 
+                                intoxicante y mágica. <br /> Este brebaje ha sido utilizado desde hace miles de años por algunas 
+                                de las culturas amazónicas en ceremonias y rituales sagrados.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
             </section>
 
         </div>
