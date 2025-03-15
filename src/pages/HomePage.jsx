@@ -14,35 +14,60 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
 
-    const itemsRef = useRef([]);
+    const itemsRef1 = useRef([]);
+    const itemsRef2 = useRef([]);
 
     useEffect(() => {
-        if (!itemsRef.current || itemsRef.current.length === 0) return;
+        itemsRef1.current = itemsRef1.current.filter(Boolean);
+        if (itemsRef1.current.length === 0) return;
     
-        gsap.utils.toArray(itemsRef.current).forEach((el, index) => {
+        itemsRef1.current.forEach((el, index) => {
             gsap.fromTo(
                 el,
-                {
-                    opacity: 0,
-                    x: index % 2 === 0 ? -100 : 100,  // Alterna dirección de entrada
-                    rotation: index % 2 === 0 ? -30 : 30 // Alterna rotación
-                },
-                {
-                    opacity: 1,
-                    x: 0,
-                    rotation: 0,
-                    duration: 1.2,
+                { opacity: 0, x: index % 2 === 0 ? -100 : 100, rotation: index % 2 === 0 ? -30 : 30 },
+                { opacity: 1, x: 0, rotation: 0, duration: 1.2, ease: "power3.out", 
+                  scrollTrigger: {
+                      trigger: el,
+                      start: "top 70%",
+                      toggleActions: "play none none reverse",
+                  },
+                }
+            );
+        });
+    
+        return () => {
+            // Elimina todos los ScrollTriggers al desmontar
+            ScrollTrigger.getAll().forEach((st) => st.kill());
+        };
+    }, []);
+    
+    useEffect(() => {
+        itemsRef2.current = itemsRef2.current.filter(Boolean);
+        if (itemsRef2.current.length === 0) return;
+    
+        itemsRef2.current.forEach((el) => {
+            if (!el) return; // Verifica si el elemento es válido antes de acceder a dataset
+    
+            gsap.fromTo(
+                el,
+                { opacity: 0, y: 100 },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 1.2, 
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: el,
-                        start: "top 70%",
+                        start: "top 80%",
                         toggleActions: "play none none reverse",
+                        once: true // Evita que se dispare muchas veces
                     },
                 }
             );
         });
     
         return () => {
+            // Elimina todos los ScrollTriggers al desmontar
             ScrollTrigger.getAll().forEach((st) => st.kill());
         };
     }, []);
@@ -295,7 +320,7 @@ const HomePage = () => {
                     </p>
                 </div>
                 <div className="mt-4 p-4 rounded-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 bg-gray-400">
-                    <div>
+                    <div className="h-auto">
                         <div>
                             <img src="/images/Aeropuerto_Iquitos.png" alt="Aeropuerto de Iquitos, punto de llegada para el turismo en Caballococha" className="rounded-xl" />
                         </div>
@@ -307,7 +332,7 @@ const HomePage = () => {
                             </p>
                         </div>
                     </div>
-                    <div>
+                    <div className="h-auto">
                         <div>
                             <img src="/images/Alojamiento.png" alt="Aeropuerto de Iquitos, punto de llegada para el turismo en Caballococha" className="rounded-xl" />
                         </div>
@@ -318,7 +343,7 @@ const HomePage = () => {
                             </p>
                         </div>
                     </div>
-                    <div>
+                    <div className="h-auto">
                         <div>
                             <img src="/images/Comida.png" alt="Aeropuerto de Iquitos, punto de llegada para el turismo en Caballococha" className="rounded-xl" />
                         </div>
@@ -378,11 +403,11 @@ const HomePage = () => {
                             <span>Exploración de Lago Caballo Cocha</span>
                         </li>
                     </ul>
-                    <div className="gap-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-gray-300 rounded-xl p-4">
+                    <div className="gap-2 grid grid-cols-1 mt-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-gray-300 rounded-xl p-4">
                         <div
-                            ref={(el) => (itemsRef.current[0] = el)}
-                            className="border p-2 bg-teal-100 shadow-md rounded-xl bg-[url('/images/Fondo_Laguna.jpeg')] bg-cover bg-center h-auto">
-                            <h2 className="font-bold text-center">Laguna de Caballo Cocha</h2>
+                            ref={(el) => (itemsRef1.current[0] = el)}
+                            className="border p-2 shadow-md rounded-xl bg-[url('/images/Fondo_Laguna.jpeg')] bg-cover bg-center h-auto">
+                            <h2 className="font-bold text-center text-lg">Laguna de Caballo Cocha</h2>
                             <p className="font-medium text-justify">
                                 Está ubicado en la selva baja y limita por el Este con la ciudad de Caballo Cocha, 
                                 por el Sur con la comunidad de Marichin, al Oeste con la Cocha Bufeo y al Norte con 
@@ -391,9 +416,9 @@ const HomePage = () => {
                             </p>
                         </div>
                         <div
-                            ref={(el) => (itemsRef.current[1] = el)}
-                            className="border p-2 bg-teal-100 shadow-md rounded-xl bg-[url('/images/Foto_flora.jpg')] bg-cover bg-center h-auto">
-                            <h2 className="font-bold text-center">Flora</h2>
+                            ref={(el) => (itemsRef1.current[1] = el)}
+                            className="border p-2 shadow-md rounded-xl bg-[url('/images/Foto_flora.jpg')] bg-cover bg-center h-auto text-yellow-100">
+                            <h2 className="font-bold text-center text-lg">Flora</h2>
                             <ul className="font-medium">
                                 {[
                                     "Manglar Amazónico (Renaco)",
@@ -415,9 +440,9 @@ const HomePage = () => {
                             </ul>
                         </div>
                         <div
-                            ref={(el) => (itemsRef.current[2] = el)}
-                            className="border p-2 bg-teal-100 shadow-md rounded-xl bg-[url('/images/Foto_fauna.png')] bg-cover bg-center h-auto">
-                            <h2 className="font-bold text-center">Aves</h2>
+                            ref={(el) => (itemsRef1.current[2] = el)}
+                            className="border p-2 shadow-md rounded-xl bg-[url('/images/Foto_fauna.png')] bg-cover bg-center h-auto text-yellow-100">
+                            <h2 className="font-bold text-center text-lg">Aves</h2>
                             <ul className="font-medium">
                                 {[
                                     "Tuqui - Tuqui",
@@ -435,9 +460,9 @@ const HomePage = () => {
                             </ul>
                         </div>
                         <div
-                            ref={(el) => (itemsRef.current[3] = el)}
-                            className="border p-2 bg-teal-100 shadow-md rounded-xl bg-[url('/images/Foto_Ayahuasca.png')] bg-cover bg-center h-auto">
-                            <h2 className="font-bold text-center">Ritual de Ayahuasca</h2>
+                            ref={(el) => (itemsRef1.current[3] = el)}
+                            className="border p-2 bg-teal-100 shadow-md rounded-xl bg-[url('/images/Foto_Ayahuasca.png')] bg-cover bg-center h-auto text-yellow-100">
+                            <h2 className="font-bold text-center text-lg">Ritual de Ayahuasca</h2>
                             <p className="font-medium text-justify">
                                 La Ayahuasca es una infusión de dos o más plantas amazónicas que da como resultado una bebida 
                                 intoxicante y mágica. <br /> Este brebaje ha sido utilizado desde hace miles de años por algunas 
@@ -446,10 +471,52 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                
-
             </section>
-
+            <section className="max-w-[1300px] w-full bg-teal-600 mx-auto rounded-xl p-4 mt-4">
+                <h1 className="text-center font-bold text-lg sm:text-xl lg:text-2xl text-teal-800 p-4 rounded bg-white shadow-md">
+                    Testimonio de Nuestros Clientes
+                </h1>
+                <div className="gap-2 grid grid-cols-1 mt-4 md:grid-cols-2 lg:grid-cols-3 bg-gray-300 rounded-xl p-4">
+                    <div
+                        ref={(el) => (itemsRef2.current[0] = el)}
+                        className="border p-2 shadow-md rounded-xl bg-white h-auto">
+                        <h2 className="font-bold text-center text-lg">Piero Alejandro</h2>
+                        <div>
+                            <img src="/images/Piero.png" alt="Testimonio Turismo Iquitos - Caballococha" />
+                        </div>
+                        <p className="font-medium text-justify">
+                            Una muy buena experiencia, estar en contacto con la narturaleza, atendido por un personal de primera y 
+                            sobre todo muy buenos precios.
+                        </p>
+                    </div>
+                    <div
+                        ref={(el) => (itemsRef2.current[1] = el)}
+                        className="border p-2 bg-white shadow-md rounded-xl h-auto">
+                        <h2 className="font-bold text-center text-lg">Débora</h2>
+                        <div>
+                            <img src="/images/Debora.png" alt="Testimonio Turismo Iquitos - Caballococha" />
+                        </div>
+                        <p className="font-medium text-justify">
+                            La Ayahuasca es una infusión de dos o más plantas amazónicas que da como resultado una bebida 
+                            intoxicante y mágica. <br /> Este brebaje ha sido utilizado desde hace miles de años por algunas 
+                            de las culturas amazónicas en ceremonias y rituales sagrados.
+                        </p>
+                    </div>
+                    <div
+                        ref={(el) => (itemsRef2.current[2] = el)}
+                        className="border p-2 bg-white shadow-md rounded-xl h-auto">
+                        <h2 className="font-bold text-center text-lg">Genaro</h2>
+                        <div>
+                            <img src="/images/Genaro.jpeg" alt="Testimonio Turismo Iquitos - Caballococha" />
+                        </div>
+                        <p className="font-medium text-justify">
+                            Hay que destacar la atención, en todo momento se proporcionaron las comodidades del caso, considerando 
+                            desde las embarcaciones, el alojamiento y la alimentación, todo muy bien organizado. Fue sensacional pasar 
+                            con la familia y ponerse en contarto con la naturaleza. Se tiene que volver de todas maneras.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };

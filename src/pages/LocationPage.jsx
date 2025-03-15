@@ -16,24 +16,27 @@ const LocationPage = () => {
         </section>
 
         {/* Imágenes */}
-        <section className="flex flex-col lg:flex-row gap-6 items-center">
-          <div className="h-[650px] w-[530px] mx-auto">
+        <section className="flex flex-col lg:flex-row gap-6 items-center px-4 md:px-8 lg:px-16">
+        {/* Se ajusta el contenedor para que se adapte a distintos tamaños de pantalla */}
+          <div className="w-full max-w-[530px] mx-auto">
             <img
               src="https://i.ibb.co/RGxJMSkd/mapa.png"
-              alt="Mapa"
-              className="w-full h-full object-cover rounded-lg border-4 border-teal-900 shadow-xl"
+              alt="Mapa Caballo Cocha - Turismo"
+              className="w-full h-auto object-cover rounded-lg border-4 border-teal-900 shadow-xl"
             />
           </div>
-          <div className="flex flex-col gap-6">
+  
+        {/* Se asegura que las imágenes secundarias también sean responsivas */}
+          <div className="flex flex-col gap-6 w-full max-w-[530px]">
             <img
               src="https://i.ibb.co/bgGgjHZ7/Caballo-croquis.png"
-              alt="Croquis"
-              className="w-[530px] h-[315px] object-cover rounded-lg border-4 border-teal-900 shadow-xl"
+              alt="Croquis Turismo Caballococha - Iquitos"
+              className="w-full h-auto object-cover rounded-lg border-4 border-teal-900 shadow-xl"
             />
             <img
               src="https://i.ibb.co/GQ6zyfMf/plaza-caballococha.png"
-              alt="Plaza Caballococha"
-              className="w-[530px] h-[315px] object-cover rounded-lg border-4 border-teal-900 shadow-xl"
+              alt="Plaza Caballococha - Turismo"
+              className="w-full h-auto object-cover rounded-lg border-4 border-teal-900 shadow-xl"
             />
           </div>
         </section>
