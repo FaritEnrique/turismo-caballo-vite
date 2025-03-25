@@ -14,6 +14,8 @@ import PaquetesPage from './pages/PaquetesPage';
 import PromocionesPage from './pages/PromocionesPage';
 import GaleriaPage from './pages/GaleriaPage';
 import LoginForm from './pages/LoginPage';
+import AdminPage from './pages/AdminPage';
+import HomePageTrad from './pages/HomePageTrad';
 
 const App = () => {
   return (
@@ -21,7 +23,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
+            <Route index element={<HomePageTrad />} />
             <Route path="/contacto" element={<ContactoPage />} />
             <Route path="/fauna" element={<FaunaPage />} />
             <Route path="/flora" element={<FloraPage />} />
@@ -32,6 +34,7 @@ const App = () => {
             <Route path="/promociones" element={<PromocionesPage />} />
             <Route path="/galeria" element={<GaleriaPage />} />
             <Route path="/login" element={<LoginForm />} />
+            <Route path="/admin" element={<AdminPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
