@@ -185,13 +185,13 @@ const HomePage = () => {
             <section className="max-w-[1300px] mx-auto rounded-xl p-4 block sm:hidden">
             <div className="bg-gradient-to-r from-teal-700 via-teal-800 to-teal-900 p-4 rounded-lg 
                 shadow-md text-white w-full">
-                <h1 className="font-bold text-center text-lg">Destacados</h1>
+                <h1 className="font-bold text-center text-lg">{t("asideTitle")}</h1>
                 <ul className="space-y-2 mt-2">
-                    <li><Link to="/localidades" className="block hover:text-yellow-300 font-semibold">Localidades Importantes</Link></li>
-                    <li><Link to="/festividades" className="block hover:text-yellow-300 font-semibold">Festividades de la Región</Link></li>
-                    <li><Link to="/flora" className="block hover:text-yellow-300 font-semibold">Flora</Link></li>
-                    <li><Link to="/fauna" className="block hover:text-yellow-300 font-semibold">Fauna</Link></li>
-                    <li><Link to="/galeria" className="block hover:text-yellow-300 font-semibold">Panel Fotográfico</Link></li>
+                    <li><Link to="/localidades" className="block hover:text-yellow-300 font-semibold">{t("asideLocality")}</Link></li>
+                    <li><Link to="/festividades" className="block hover:text-yellow-300 font-semibold">{t("asideFest")}</Link></li>
+                    <li><Link to="/flora" className="block hover:text-yellow-300 font-semibold">{t("asideFlora")}</Link></li>
+                    <li><Link to="/fauna" className="block hover:text-yellow-300 font-semibold">{t("asideFauna")}</Link></li>
+                    <li><Link to="/galeria" className="block hover:text-yellow-300 font-semibold">{t("asidePhotos")}</Link></li>
                 </ul>
             </div>
             </section>
@@ -234,13 +234,13 @@ const HomePage = () => {
                     {/* Destacados */}
                     <div className="bg-gradient-to-r from-teal-700 via-teal-800 to-teal-900 p-4 rounded-lg 
                     shadow-md text-white hidden sm:w-full sm:block sm:h-65 md:h-80">
-                        <h1 className="font-bold text-center text-lg">Destacados</h1>
+                        <h1 className="font-bold text-center text-lg">{t("asideTitle")}</h1>
                         <ul className="space-y-2 mt-2">
-                            <li><Link to="/localidades" className="block hover:text-yellow-300 font-semibold">Localidades Importantes</Link></li>
-                            <li><Link to="/festividades" className="block hover:text-yellow-300 font-semibold">Festividades de la Región</Link></li>
-                            <li><Link to="/flora" className="block hover:text-yellow-300 font-semibold">Flora</Link></li>
-                            <li><Link to="/fauna" className="block hover:text-yellow-300 font-semibold">Fauna</Link></li>
-                            <li><Link to="/galeria" className="block hover:text-yellow-300 font-semibold">Panel Fotográfico</Link></li>
+                            <li><Link to="/localidades" className="block hover:text-yellow-300 font-semibold">{t("asideLocality")}</Link></li>
+                            <li><Link to="/festividades" className="block hover:text-yellow-300 font-semibold">{t("asideFest")}</Link></li>
+                            <li><Link to="/flora" className="block hover:text-yellow-300 font-semibold">{t("asideFlora")}</Link></li>
+                            <li><Link to="/fauna" className="block hover:text-yellow-300 font-semibold">{t("asideFauna")}</Link></li>
+                            <li><Link to="/galeria" className="block hover:text-yellow-300 font-semibold">{t("asidePhotos")}</Link></li>
                         </ul>
                     </div>
                     {/* Video */}
