@@ -13,6 +13,7 @@ import LocalidadesPage from './pages/LocalidadesPage';
 import PaquetesPage from './pages/PaquetesPage';
 import PromocionesPage from './pages/PromocionesPage';
 import GaleriaPage from './pages/GaleriaPage';
+import LoginForm from './pages/LoginPage';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/paquetes" element={<PaquetesPage />} />
             <Route path="/promociones" element={<PromocionesPage />} />
             <Route path="/galeria" element={<GaleriaPage />} />
+            <Route path="/login" element={<LoginForm />} />
           </Route>
         </Routes>
       </BrowserRouter>

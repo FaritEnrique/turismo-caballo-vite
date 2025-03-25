@@ -1,4 +1,5 @@
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -10,6 +11,9 @@ const Footer = () => {
           <p className="text-gray-200">
             Explora el mundo con nuestros increíbles tours y guías expertos. Descubre experiencias únicas y personalizadas.
           </p>
+          <button>
+          <Link to='/login' className="mt-4 p-2 text-gray-800 font-semibold bg-slate-400 hover:bg-green-300 rounded-xl ring-2 ring-gray-100" >Administración</Link>
+          </button>
         </div>
 
         {/* Enlaces de servicios */}
