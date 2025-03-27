@@ -13,6 +13,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../components/LanguageSwitcher";
+import { Trans } from "react-i18next";
 
 const HomePage = () => {
 
@@ -303,13 +304,13 @@ const HomePage = () => {
             <section className="max-w-[1300px] w-full bg-teal-600 mx-auto rounded-xl p-4 flex flex-col md:flex-row gap-4 items-start">
                 <div className="bg-white p-4 rounded-lg shadow-md w-full md:w-3/5">
                     <h1 className="text-center font-bold text-lg sm:text-xl lg:text-2xl text-teal-800">
-                        Nuestro Compromiso con el Medio Ambiente y los Clientes
+                        {t("compromisoTitle")}
                     </h1>
                     <div className="bg-white p-4 rounded-lg shadow-md mt-4">
                         <p className="text-gray-900 text-justify font-medium">
-                            Nos comprometemos a brindar un servicio de óptima calidad a nuestros clientes, considerando el respeto al medio ambiente. <br />
-                            Adoptamos las medidas necesarias para prevenir la contaminación, procurando en lo posible, reducir sistemáticamente los residuos, reciclándolos y reutilizándolos. <br />
-                            Para nosotros, el uso eficiente de recursos naturales, materias primas y energía, es de suma importancia.
+                            {t("compromisoTexto1")} <br />
+                            {t("compromisoTexto2")} <br />
+                            {t("compromisoTexto3")}
                         </p>
                     </div>
                 </div>
@@ -320,13 +321,15 @@ const HomePage = () => {
             <section className="max-w-[1300px] w-full bg-teal-600 mx-auto rounded-xl p-4 mt-4">
                 <div>
                     <h1 className="text-center font-bold text-lg sm:text-xl lg:text-2xl text-teal-800 p-4 rounded bg-white shadow-md">
-                        Nuestros Servicios
+                        {t("serviciosTitle")}
                     </h1>
                     <p className="text-gray-900 text-justify mt-4 bg-yellow-50 p-4 rounded-lg shadow-md font-medium">
-                        La contratacion del <Link to="/paquetes" className="underline" 
-                        title="Ver detalles del paquete turístico - Caballococha">paquete</Link>, contempla la
-                        prestación de servicios adicionales, que no son propios del tour a Caballo Cocha, 
-                        para garantizar la comodidad y seguridad de nuestros clientes.
+                        <Trans i18nKey="serviciosText">
+                            La contratacion del <Link to="/paquetes" className="underline" 
+                            title="Ver detalles del paquete turístico - Caballococha">paquete</Link>, contempla la
+                            prestación de servicios adicionales, que no son propios del tour a Caballo Cocha, 
+                            para garantizar la comodidad y seguridad de nuestros clientes.
+                        </Trans>
                     </p>
                 </div>
                 <div className="mt-4 p-4 rounded-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 bg-gray-400">
@@ -335,10 +338,8 @@ const HomePage = () => {
                             <img src="/images/Aeropuerto_Iquitos.png" alt="Aeropuerto de Iquitos, punto de llegada para el turismo en Caballococha" className="rounded-xl" />
                         </div>
                         <div className="p-2 bg-slate-100">
-                            <p className="text-black">
-                                Como parte del servicio, está previsto el recojo en el aeropuerto, ya sea de Iquitos o Leticia. 
-                                Asimismo, también se tiene contemplado el desplazamiento a la Ciudad de Caballococha en 
-                                deslizador, garantizándose una total comodidad.
+                            <p className="text-black text-justify">
+                                {t("aeropuertoText")}
                             </p>
                         </div>
                     </div>
@@ -347,9 +348,8 @@ const HomePage = () => {
                             <img src="/images/Alojamiento.png" alt="Aeropuerto de Iquitos, punto de llegada para el turismo en Caballococha" className="rounded-xl" />
                         </div>
                         <div className="p-2 bg-slate-100">
-                            <p className="text-black">
-                                Se proporcionará alojamiento a los clientes en cómodas habitaciones, con camas de 2 plazas, 
-                                con acceso a todos los servicios, incluyendo aire acondicionado.
+                            <p className="text-black text-justify">
+                                {t("cuartoText")}
                             </p>
                         </div>
                     </div>
@@ -358,11 +358,8 @@ const HomePage = () => {
                             <img src="/images/Comida.png" alt="Aeropuerto de Iquitos, punto de llegada para el turismo en Caballococha" className="rounded-xl" />
                         </div>
                         <div className="p-2 bg-slate-100">
-                            <p className="text-black">
-                                El servicio de alimentación, se proporcionará, considerando las normas sanitarias y el uso de 
-                                productos de muy buena calidad, para garantizar nuestros productos. Ser servirán platos típicos 
-                                de la zona, en el desayuno, almuerzo y cena. Se estará pendiente de los clientes, con sus 
-                                requerimientos excepcionales, ya sea por salud u otro motivo.
+                            <p className="text-black text-justify">
+                                {t("comidaText")}
                             </p>
                         </div>
                     </div>
@@ -378,69 +375,66 @@ const HomePage = () => {
                         bg-yellow-50 text-teal-900"
                     title="Programa Turístico Iquitos Caballococha"
                 >
-                    Programa Turístico
+                    {t("programaTitle")}
                 </h1>
                 <div
                     className="bg-yellow-50 rounded-xl mt-4 p-4"
                     title="Actividades Turísiticas en Caballococha - Loreto Iquitos"
                 >
                     <h2 className="text-center text-teal-900 md:text-lg lg:text-xl font-bold">
-                        Actividades del Progrma Turístico
+                        {t("programaSubTitle")}
                     </h2>
                     <ul className="font-semibold mt-2">
                         <li className="flex gap-4 items-center text-amber-950">
                             <TbPointFilled />
-                            <span>City Tour Caballococha</span>
+                            <span>{t("actividadesPrograma1")}</span>
                         </li>
                         <li className="flex gap-4 items-center text-amber-950">
                             <TbPointFilled />
-                            <span>Visita Comunidad Los Ticunas</span>
+                            <span>{t("actividadesPrograma2")}</span>
                         </li>
                         <li className="flex gap-4 items-center text-amber-950">
                             <TbPointFilled />
-                            <span>Exploración del Río Amazonas</span>
+                            <span>{t("actividadesPrograma3")}</span>
                         </li>
                         <li className="flex gap-4 items-center text-amber-950">
                             <TbPointFilled />
-                            <span>Visita la Comunidad de Vista Alegre</span>
+                            <span>{t("actividadesPrograma4")}</span>
                         </li>
                         <li className="flex gap-4 items-center text-amber-950">
                             <TbPointFilled />
-                            <span>Pesca Artesanal</span>
+                            <span>{t("actividadesPrograma5")}</span>
                         </li>
                         <li className="flex gap-4 items-center text-amber-950">
                             <TbPointFilled />
-                            <span>Exploración de Lago Caballo Cocha</span>
+                            <span>{t("actividadesPrograma6")}</span>
                         </li>
                     </ul>
                     <div className="gap-2 grid grid-cols-1 mt-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-gray-300 rounded-xl p-4">
                         <div
                             ref={(el) => (itemsRef1.current[0] = el)}
                             className="border p-2 shadow-md rounded-xl bg-[url('/images/Fondo_Laguna.jpeg')] bg-cover bg-center h-auto">
-                            <h2 className="font-bold text-center text-lg">Laguna de Caballo Cocha</h2>
+                            <h2 className="font-bold text-center text-lg">{t("lagunaTitle")}</h2>
                             <p className="font-medium text-justify">
-                                Está ubicado en la selva baja y limita por el Este con la ciudad de Caballo Cocha, 
-                                por el Sur con la comunidad de Marichin, al Oeste con la Cocha Bufeo y al Norte con 
-                                el río Amazonas. <br /> La laguna de Caballo Cocha y su complejo de cochas están 
-                                alimentados por las aguas del río Amazonas.
+                                {t("lagunaText1")} <br /> {t("lagunaText1")}
                             </p>
                         </div>
                         <div
                             ref={(el) => (itemsRef1.current[1] = el)}
                             className="border p-2 shadow-md rounded-xl bg-[url('/images/Foto_flora.jpg')] bg-cover bg-center h-auto text-yellow-100">
-                            <h2 className="font-bold text-center text-lg">Flora</h2>
+                            <h2 className="font-bold text-center text-lg">{t("floraTitle")}</h2>
                             <ul className="font-medium">
                                 {[
-                                    "Manglar Amazónico (Renaco)",
-                                    "Huama",
-                                    "Sensitiva",
-                                    "Lila Amazónica",
-                                    "Bonsay Amazónico",
-                                    "Piri - Piri",
-                                    "Magnolia",
-                                    "Huiririma",
-                                    "Bromelias",
-                                    "Camu - Camu",
+                                    t("floraList1"),
+                                    t("floraList2"),
+                                    t("floraList3"),
+                                    t("floraList4"),
+                                    t("floraList5"),
+                                    t("floraList6"),
+                                    t("floraList7"),
+                                    t("floraList8"),
+                                    t("floraList9"),
+                                    t("floraList10"),
                                 ].map((item, index) => (
                                     <li key={index} className="flex flex-wrap gap-4 items-center">
                                         <TbPointFilled />
@@ -452,15 +446,15 @@ const HomePage = () => {
                         <div
                             ref={(el) => (itemsRef1.current[2] = el)}
                             className="border p-2 shadow-md rounded-xl bg-[url('/images/Foto_fauna.png')] bg-cover bg-center h-auto text-yellow-100">
-                            <h2 className="font-bold text-center text-lg">Aves</h2>
+                            <h2 className="font-bold text-center text-lg">{t("avesTitle")}</h2>
                             <ul className="font-medium">
                                 {[
-                                    "Tuqui - Tuqui",
-                                    "Pavo Buitre (Rinahui)",
-                                    "Garza Real",
-                                    "Cormonares (Cushuri)",
-                                    "Gaviotas Amazónicas",
-                                    "Camugos",
+                                    t("avesList1"),
+                                    t("avesList2"),
+                                    t("avesList3"),
+                                    t("avesList4"),
+                                    t("avesList5"),
+                                    t("avesList6"),
                                 ].map((item, index) => (
                                     <li key={index} className="flex flex-wrap gap-4 items-center">
                                         <TbPointFilled />
@@ -472,11 +466,9 @@ const HomePage = () => {
                         <div
                             ref={(el) => (itemsRef1.current[3] = el)}
                             className="border p-2 bg-teal-100 shadow-md rounded-xl bg-[url('/images/Foto_Ayahuasca.png')] bg-cover bg-center h-auto text-yellow-100">
-                            <h2 className="font-bold text-center text-lg">Ritual de Ayahuasca</h2>
+                            <h2 className="font-bold text-center text-lg">{t("ayahuascaTitle")}</h2>
                             <p className="font-medium text-justify">
-                                La Ayahuasca es una infusión de dos o más plantas amazónicas que da como resultado una bebida 
-                                intoxicante y mágica. <br /> Este brebaje ha sido utilizado desde hace miles de años por algunas 
-                                de las culturas amazónicas en ceremonias y rituales sagrados.
+                                {t("ayahuascaText1")} <br /> {t("ayahuascaText2")}
                             </p>
                         </div>
                     </div>
@@ -484,7 +476,7 @@ const HomePage = () => {
             </section>
             <section className="max-w-[1300px] w-full bg-teal-600 mx-auto rounded-xl p-4 mt-4">
                 <h1 className="text-center font-bold text-lg sm:text-xl lg:text-2xl text-teal-800 p-4 rounded bg-white shadow-md">
-                    Testimonio de Nuestros Clientes
+                    {t("testimonioTitle")}
                 </h1>
                 <div className="gap-2 grid grid-cols-1 mt-4 md:grid-cols-2 lg:grid-cols-3 bg-gray-300 rounded-xl p-4">
                     <div
@@ -495,8 +487,7 @@ const HomePage = () => {
                             <img src="/images/Piero.png" alt="Testimonio Turismo Iquitos - Caballococha" />
                         </div>
                         <p className="font-medium text-justify">
-                            Una muy buena experiencia, estar en contacto con la narturaleza, atendido por un personal de primera y 
-                            sobre todo muy buenos precios.
+                            {t("testimonioText1.1")}
                         </p>
                     </div>
                     <div
@@ -507,9 +498,7 @@ const HomePage = () => {
                             <img src="/images/Debora.png" alt="Testimonio Turismo Iquitos - Caballococha" />
                         </div>
                         <p className="font-medium text-justify">
-                            La Ayahuasca es una infusión de dos o más plantas amazónicas que da como resultado una bebida 
-                            intoxicante y mágica. <br /> Este brebaje ha sido utilizado desde hace miles de años por algunas 
-                            de las culturas amazónicas en ceremonias y rituales sagrados.
+                            {t("testimonioText2.1")} <br /> {t("testimonioText2.2")}
                         </p>
                     </div>
                     <div
@@ -520,9 +509,7 @@ const HomePage = () => {
                             <img src="/images/Genaro.jpeg" alt="Testimonio Turismo Iquitos - Caballococha" />
                         </div>
                         <p className="font-medium text-justify">
-                            Hay que destacar la atención, en todo momento se proporcionaron las comodidades del caso, considerando 
-                            desde las embarcaciones, el alojamiento y la alimentación, todo muy bien organizado. Fue sensacional pasar 
-                            con la familia y ponerse en contarto con la naturaleza. Se tiene que volver de todas maneras.
+                            {t("testimonioText3.1")} <br /> {t("testimonioText3.2")}
                         </p>
                     </div>
                 </div>

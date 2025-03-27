@@ -9,11 +9,13 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: { translation: en },
-      es: { translation: es },
+      en: en,
+      es: es,
     },
     lng: "es", // Idioma predeterminado
     fallbackLng: "es",
+    ns: ["header", "footer", "homepage"],
+    defaultNS: "homepage",
     interpolation: { escapeValue: false },
     debug: true,
   });
