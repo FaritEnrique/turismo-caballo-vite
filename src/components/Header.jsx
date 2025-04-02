@@ -69,7 +69,7 @@ const Header = () => {
           <div className="relative p-4 w-full max-w-2xl bg-white rounded-lg shadow-lg dark:bg-gray-700">
             {/* Modal header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-600">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{t("about")}</h3>
+              <h3 className="text-xl font-semibold text-white">{t("about")}</h3>
               <button
                 onClick={closeMenus}
                 className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -84,19 +84,11 @@ const Header = () => {
             {/* Modal body */}
             <div className="p-4 space-y-4">
               <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 text-justify">
-                <Trans i18nKey="modalText1">
-                  Gracias por visitar nuestro sitio web, <strong>DANIKAH TRAVEL</strong>, una agencia líder en el área de 
-                  turismo y vuelos aéreos. Contamos con atención especializada en los más diversos productos del rubro, 
-                  como asesoría y venta de pasajes aéreos nacionales e internacionales, paquetes turísticos, cruceros marítimos, 
-                  excursiones, y mucho más.
-                </Trans> <br />
+                {t("modalText1")}
+                <br />
               </p>
               <p className="text-base text-gray-500 dark:text-gray-400 text-justify">
-                <Trans i18nKey="modalText1">
-                  <strong>DANIKAH TRAVEL</strong> fue fundada en el año 2018 en la ciudad de Iquitos, Perú. Iniciamos ofreciendo 
-                  servicios de venta de boletos aéreos nacionales y, prontamente, expandimos nuestra oferta a todo el país. Hoy, 
-                  consolidamos una amplia variedad de servicios turísticos con las mejores alternativas para nuestros clientes.
-                </Trans>
+                {t("modalText2")}
               </p>
             </div>
 
