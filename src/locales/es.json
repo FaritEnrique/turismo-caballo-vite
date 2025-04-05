@@ -88,5 +88,19 @@
         "testimonioText2.2": "Este brebaje ha sido utilizado desde hace miles de años por algunas de las culturas amazónicas en ceremonias y rituales sagrados.",
         "testimonioText3.1": "Hay que destacar la atención, en todo momento se proporcionaron las comodidades del caso, considerando desde las embarcaciones, el alojamiento y la alimentación, todo muy bien organizado.",
         "testimonioText3.2": "Fue sensacional pasar con la familia y ponerse en contarto con la naturaleza. Se tiene que volver de todas maneras."
+    },
+    "location": {
+        "locationTitle": "Descubre Caballococha",
+        "locationText1": "Caballococha es una joya escondida en el corazón de la Amazonía peruana, ubicada en la provincia de Mariscal Ramón Castilla, departamento de Loreto. Este destino es conocido por su rica biodiversidad, paisajes naturales impresionantes y su estratégica posición cerca de las fronteras con Colombia y Brasil.",
+        "locationText2": "A orillas del majestuoso río Amazonas, Caballococha ofrece experiencias únicas para los amantes de la naturaleza y la aventura. Aquí podrás disfrutar de paseos en bote por la selva, observar delfines rosados, conocer comunidades indígenas y explorar la exuberante flora y fauna de la región.",
+        "hacerTitle": "¿Qué puedes hacer en Caballococha?",
+        "hacerText1": "<strong>Avistamiento de delfines rosados:</strong> Observa a estos encantadores animales en su hábitat natural.",
+        "hacerText2": "<strong>Exploración en la selva:</strong> Adéntrate en la flora y fauna amazónica a través de caminatas guiadas.",
+        "hacerText3": "<strong>Visita a comunidades nativas:</strong> Conoce las costumbres y tradiciones de las comunidades indígenas locales.",
+        "hacerText4": "<strong>Paseos en bote:</strong> Recorre los afluentes del Amazonas y vive una experiencia inolvidable.",
+        "hacerText5": "<strong>Disfruta de su gastronomía:</strong> Prueba platos típicos como el juane, el tacacho con cecina y exquisitos pescados amazónicos.",
+        "consejosTitle": "Consejos para tu visita",
+        "consejosText1": "Caballococha tiene un clima cálido y húmedo durante todo el año, con temperaturas promedio de 25°C a 30°C. Se recomienda llevar ropa ligera, protector solar, repelente de insectos y una actitud aventurera para disfrutar al máximo tu experiencia.",
+        "boton": "Ir a Incio"
     }
 }

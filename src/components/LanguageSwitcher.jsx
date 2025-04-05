@@ -51,6 +51,13 @@ const LanguageSwitcher = () => {
             <img src="https://flagcdn.com/w40/es.png" alt="Español" className="w-5 h-5" />
             <span>Español</span>
           </button>
+          <button
+            onClick={() => changeLanguage("no")}
+            className="px-4 py-2 text-gray-800 hover:bg-gray-300 flex items-center space-x-2"
+          >
+            <img src="https://flagcdn.com/w40/no.png" alt="Norwegian" className="w-5 h-5" />
+            <span>Norwegian</span>
+          </button>
         </div>
       )}
     </div>

@@ -4,6 +4,7 @@ import { initReactI18next } from "react-i18next";
 // Importa tus traducciones
 import es from "./src/locales/es.json";
 import en from "./src/locales/en.json";
+import no from "./src/locales/no.json";
 
 i18n
   .use(initReactI18next)
@@ -11,10 +12,11 @@ i18n
     resources: {
       en: en,
       es: es,
+      no: no,
     },
     lng: "es", // Idioma predeterminado
     fallbackLng: "es",
-    ns: ["header", "footer", "homepage"],
+    ns: ["header", "footer", "homepage", "location"],
     defaultNS: "homepage",
     interpolation: { escapeValue: false },
     debug: true,

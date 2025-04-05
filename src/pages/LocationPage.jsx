@@ -1,17 +1,21 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Trans } from 'react-i18next';
 
 const LocationPage = () => {
+  const { t } = useTranslation("location");
+  console.log(t("location.hacerText1"));
   return (
     <main className="min-h-screen flex flex-col items-center bg-gray-100 p-6">
       <div className="max-w-5xl w-full bg-white shadow-xl rounded-lg p-6 space-y-6">
         {/* Texto descriptivo */}
         <section className="space-y-4">
-          <h1 className="text-center text-4xl font-bold text-teal-900">Descubre Caballococha</h1>
+          <h1 className="text-center text-4xl font-bold text-teal-900">{t("locationTitle")}</h1>
           <p className="text-justify text-gray-700">
-            Caballococha es una joya escondida en el corazón de la Amazonía peruana, ubicada en la provincia de Mariscal Ramón Castilla, departamento de Loreto. Este destino es conocido por su rica biodiversidad, paisajes naturales impresionantes y su estratégica posición cerca de las fronteras con Colombia y Brasil.
+            {t("locationText1")}
           </p>
           <p className="text-justify text-gray-700">
-            A orillas del majestuoso río Amazonas, Caballococha ofrece experiencias únicas para los amantes de la naturaleza y la aventura. Aquí podrás disfrutar de paseos en bote por la selva, observar delfines rosados, conocer comunidades indígenas y explorar la exuberante flora y fauna de la región.
+            {t("locationText2")}
           </p>
         </section>
 
@@ -43,27 +47,27 @@ const LocationPage = () => {
 
         {/* Información adicional */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-teal-900">¿Qué puedes hacer en Caballococha?</h2>
+          <h2 className="text-2xl font-semibold text-teal-900">{t("hacerTitle")}</h2>
           <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li><strong>Avistamiento de delfines rosados:</strong> Observa a estos encantadores animales en su hábitat natural.</li>
-            <li><strong>Exploración en la selva:</strong> Adéntrate en la flora y fauna amazónica a través de caminatas guiadas.</li>
-            <li><strong>Visita a comunidades nativas:</strong> Conoce las costumbres y tradiciones de las comunidades indígenas locales.</li>
-            <li><strong>Paseos en bote:</strong> Recorre los afluentes del Amazonas y vive una experiencia inolvidable.</li>
-            <li><strong>Disfruta de su gastronomía:</strong> Prueba platos típicos como el juane, el tacacho con cecina y exquisitos pescados amazónicos.</li>
+            <li dangerouslySetInnerHTML={{ __html: t("hacerText1") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("hacerText2") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("hacerText3") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("hacerText4") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("hacerText5") }} />
           </ul>
         </section>
 
         {/* Clima y recomendaciones */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-teal-900">Consejos para tu visita</h2>
+          <h2 className="text-2xl font-semibold text-teal-900">{t("consejosTitle")}</h2>
           <p className="text-gray-700">
-            Caballococha tiene un clima cálido y húmedo durante todo el año, con temperaturas promedio de 25°C a 30°C. Se recomienda llevar ropa ligera, protector solar, repelente de insectos y una actitud aventurera para disfrutar al máximo tu experiencia.
+            {t("consejosText1")}
           </p>
         </section>
 
         {/* Botón de regreso */}
         <div className="flex justify-center">
-          <a href="/" className="px-6 py-3 bg-teal-800 text-white rounded-lg shadow-md hover:bg-teal-900 transition">Ir a Inicio</a>
+          <a href="/" className="px-6 py-3 bg-teal-800 text-white rounded-lg shadow-md hover:bg-teal-900 transition">{t("boton")}</a>
         </div>
       </div>
     </main>
