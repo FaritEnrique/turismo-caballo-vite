@@ -103,5 +103,82 @@
         "consejosTitle": "Tips for Your Visit",
         "consejosText1": "Caballococha has a warm and humid climate throughout the year, with average temperatures ranging from 25°C to 30°C. It is recommended to bring lightweight clothing, sunscreen, insect repellent, and an adventurous spirit to fully enjoy your experience.",
         "boton": "Go to Home"
+    },
+    "paquetes": {
+        "programaTuristicoTitulo": "Caballo Cocha Tourist Program",
+        "lugar": "Location:",
+        "estadia": "Stay:",
+        "programaTuristicoLugar": "City of Caballo Cocha.",
+        "programaTuristicoEstadia": "Three days and two nights.",
+        "itinerario": {
+            "titulo": "Itinerary",
+            "dias": {
+                "dia1": {
+                    "titulo": "First Day",
+                    "actividades": [
+                    "Tour around the City and the Main Market to discover local products.",
+                    "Visit to the Ticuna community, with observation of flora and crafts.",
+                    "Typical regional lunch.",
+                    "Amazon River tour and sunset viewing.",
+                    "Return to the hotel for dinner and rest."
+                    ]
+                },
+                "dia2": {
+                    "titulo": "Second Day",
+                    "actividades": [
+                    "Breakfast and visit to Vista Alegre with a walk in the jungle.",
+                    "Observation of flora, fauna, and artisanal piranha fishing.",
+                    "Typical lunch and return to the city."
+                    ]
+                },
+                "dia3": {
+                    "titulo": "Third Day",
+                    "actividades": [
+                    "Boat exploration of Caballo Cocha lagoon.",
+                    "Sightseeing of pink dolphins and local birds.",
+                    "Breakfast on board and typical lunch after the tour."
+                    ]
+                }
+            }
+        },
+        "nota": {
+            "titulo": "Note",
+            "contenido": "Passenger reception takes place at the airports of Iquitos (Peru) or Leticia (Colombia). Transfers will be via the Amazon River on glide boats to Caballo Cocha. A great Amazon adventure!"
+        },
+        "sugerencias": {
+            "titulo": "Suggestions for Tourists",
+            "lista": [
+                "Rain ponchos",
+                "Mosquito repellent",
+                "Rubber boots for walks",
+                "Flashlight and batteries",
+                "Swimwear and comfortable clothing for the climate",
+                "Personal medications",
+                "Indicate dietary restrictions",
+                "Provide return flight date and number"
+            ]
+        },
+        "boton": {
+            "texto": "Go to Homepage"
+        }
+    },
+    "promociones": {
+        "titulo": "Promotions",
+        "descuento": "Discount",
+        "precioOriginal": "Original Price",
+        "precioFinal": "Final Price",
+        "fechaInicio": "Start Date",
+        "fechaFin": "End Date",
+        "fechaNoDisponible": "Date not available"
+    },
+    "contacto": {
+        "titulo": "Contacts",
+        "informacionWhatsApp": "To request information, send a WhatsApp message indicating the information you need.",
+        "infoTours": "Tours Caballo Cocha Information:",
+        "whatsapp1": "+51 926 245191",
+        "infoPaquetes": "Packages and Air Tickets Information:",
+        "whatsapp2": "+51 917 365332",
+        "siguenosRedes": "Follow us on social media",
+        "irPaginaPrincipal": "Go to Homepage"
     }
 }

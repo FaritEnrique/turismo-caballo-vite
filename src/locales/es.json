@@ -102,5 +102,82 @@
         "consejosTitle": "Consejos para tu visita",
         "consejosText1": "Caballococha tiene un clima cálido y húmedo durante todo el año, con temperaturas promedio de 25°C a 30°C. Se recomienda llevar ropa ligera, protector solar, repelente de insectos y una actitud aventurera para disfrutar al máximo tu experiencia.",
         "boton": "Ir a Incio"
+    },
+    "paquetes": {
+        "programaTuristicoTitulo": "Programa Turístico Caballo Cocha",
+        "lugar": "Lugar:",
+        "estadia": "Estadia:",
+        "programaTuristicoLugar": "Ciudad de Caballo Cocha.",
+        "programaTuristicoEstadia": "Tres días y dos noches.",
+        "itinerario": {
+            "titulo": "Itinerario",
+            "dias": {
+                "dia1": {
+                    "titulo": "Primer Día",
+                    "actividades": [
+                    "Recorrido por la Ciudad y el Mercado Principal para conocer productos locales.",
+                    "Visita a la comunidad de los Ticunas, con observación de flora y artesanías.",
+                    "Almuerzo típico de la región.",
+                    "Paseo por el río Amazonas y avistamiento del atardecer.",
+                    "Regreso al hotel para cena y descanso."
+                    ]
+                },
+                "dia2": {
+                    "titulo": "Segundo Día",
+                    "actividades": [
+                    "Desayuno y visita a Vista Alegre con caminata en la selva.",
+                    "Observación de flora, fauna y pesca artesanal de pirañas.",
+                    "Almuerzo típico y regreso a la ciudad."
+                    ]
+                },
+                "dia3": {
+                    "titulo": "Tercer Día",
+                    "actividades": [
+                    "Exploración en bote por la laguna de Caballo Cocha.",
+                    "Avistamiento de delfines rosados y aves locales.",
+                    "Desayuno a bordo y almuerzo típico al finalizar el recorrido."
+                    ]
+                }
+            }
+        },
+        "nota": {
+            "titulo": "Nota",
+            "contenido": "La recepción de pasajeros se realiza en los aeropuertos de Iquitos (Perú) o Leticia (Colombia). Los traslados serán por el río Amazonas en botes deslizadores hasta Caballo Cocha. ¡Gran aventura Amazónica!"
+        },
+        "sugerencias": {
+            "titulo": "Sugerencias para el Turista",
+            "lista": [
+                "Ponchos para la lluvia",
+                "Repelente para mosquitos",
+                "Botas de jebe para caminatas",
+                "Linterna y baterías",
+                "Ropa de baño y cómoda para el clima",
+                "Medicamentos personales",
+                "Indicar restricciones alimentarias",
+                "Proveer fecha y número de vuelo de retorno"
+            ]
+        },
+        "boton": {
+            "texto": "Ir a Página Principal"
+        }
+    },
+    "promociones": {
+        "titulo": "Promociones",
+        "descuento": "Descuento",
+        "precioOriginal": "Precio Original",
+        "precioFinal": "Precio Final",
+        "fechaInicio": "Fecha de Inicio",
+        "fechaFin": "Fecha de Fin",
+        "fechaNoDisponible": "Fecha no disponible"
+    },
+    "contacto": {
+        "titulo": "Contactos",
+        "informacionWhatsApp": "Para solicitar información, envíe un WhatsApp, indicando la información que requiera.",
+        "infoTours": "Información Tours Caballo Cocha:",
+        "whatsapp1": "+51 926 245191",
+        "infoPaquetes": "Información Paquetes y Pasajes Aéreos:",
+        "whatsapp2": "+51 917 365332",
+        "siguenosRedes": "Síguenos en redes sociales",
+        "irPaginaPrincipal": "Ir a Página Principal"
     }
 }

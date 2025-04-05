@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const ContactPage = () => {
+  const { t } = useTranslation('contacto'); // Usa el namespace 'contacto'
   return (
     <main className="min-h-screen flex flex-col items-center bg-gray-100 p-6">
       <div className="max-w-5xl w-full bg-white p-6 rounded-2xl shadow-xl border-4 border-teal-900">
@@ -13,13 +15,13 @@ const ContactPage = () => {
 
         {/* Información de Contacto */}
         <section className="text-center mb-6">
-          <h2 className="text-4xl font-bold text-teal-900 mb-4">Contactos</h2>
+          <h2 className="text-4xl font-bold text-teal-900 mb-4">{t('titulo')}</h2>
           <p className="text-lg mb-4">
-            Para solicitar información, envíe un WhatsApp, indicando la información que requiera.
+            {t('informacionWhatsApp')}
           </p>
           <div className="bg-cyan-100 border-4 border-teal-900 rounded-xl p-4 shadow-lg mb-6">
             <div className="items-center justify-center gap-4">
-              <p className="text-lg text-gray-900 font-medium">Información Tours Caballo Cocha:</p>
+              <p className="text-lg text-gray-900 font-medium">{t('infoTours')}</p>
               <div className="mt-2">
                 
                 <Link to="https://api.whatsapp.com/send?phone=+51926245191&text=Hola, estoy interesado en el paquete turístico a Caballo Cocha" target="_blank" className="inline-block">
@@ -32,7 +34,7 @@ const ContactPage = () => {
             </div>
             <br />
             <div className="items-center justify-center gap-4">
-              <p className="text-lg text-gray-900 font-medium">Información Paquetes y Pasajes Aéreos:</p>
+              <p className="text-lg text-gray-900 font-medium">{t('infoPaquetes')}</p>
               <div className="mt-2">
                 <Link to="https://api.whatsapp.com/send?phone=+51917365332&text=Hola, estoy interesado en el paquete turístico" target="_blank" className="inline-block">
                   <div className='flex items-center'>
@@ -47,7 +49,7 @@ const ContactPage = () => {
 
         {/* Redes Sociales */}
         <section className="text-center mt-6">
-          <h3 className="text-2xl font-bold text-teal-900 mb-4">Síguenos en redes sociales</h3>
+          <h3 className="text-2xl font-bold text-teal-900 mb-4">{t('siguenosRedes')}</h3>
           <div className="flex justify-center space-x-6">
             <Link to="https://web.facebook.com/profile.php?id=100057419862464" target="_blank" rel="noopener noreferrer">
               <FaFacebook className="text-blue-600 text-4xl hover:scale-110 transition-transform" />
@@ -64,7 +66,7 @@ const ContactPage = () => {
         {/* Botón */}
         <div className="flex justify-center mt-6">
           <Link to="/" className="px-6 py-3 bg-teal-800 text-white rounded-xl shadow-xl hover:bg-teal-900 transition">
-            Ir a Página Principal
+            {t('irPaginaPrincipal')}
           </Link>
         </div>
       </div>

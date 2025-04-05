@@ -16,7 +16,7 @@ i18n
     },
     lng: "es", // Idioma predeterminado
     fallbackLng: "es",
-    ns: ["header", "footer", "homepage", "location"],
+    ns: ["header", "footer", "homepage", "location", "promociones", "contacto"],
     defaultNS: "homepage",
     interpolation: { escapeValue: false },
     debug: true,

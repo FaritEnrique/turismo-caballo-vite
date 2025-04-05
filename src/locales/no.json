@@ -102,5 +102,82 @@
         "consejosTitle": "Tips for besøket ditt",
         "consejosText1": "Caballococha har et varmt og fuktig klima året rundt, med gjennomsnittlige temperaturer på 25°C til 30°C. Det anbefales å ta med lette klær, solkrem, insektsmiddel og en eventyrlysten holdning for å få mest mulig ut av opplevelsen.",
         "boton": "Gå til Hjem"
+    },
+    "paquetes": {
+    "programaTuristicoTitulo": "Turistprogram Caballo Cocha",
+    "lugar": "Sted:",
+    "estadia": "Opphold:",
+    "programaTuristicoLugar": "Byen Caballo Cocha.",
+    "programaTuristicoEstadia": "Tre dager og to netter.",
+    "itinerario": {
+        "titulo": "Reiserute",
+        "dias": {
+            "dia1": {
+                "titulo": "Første Dag",
+                "actividades": [
+                "Tur rundt byen og hovedmarkedet for å oppdage lokale produkter.",
+                "Besøk til Ticuna-samfunnet, med observasjon av flora og håndverk.",
+                "Typisk regional lunsj.",
+                "Amazonas-elv tur og solnedgangsutsikt.",
+                "Tilbake til hotellet for middag og hvile."
+                ]
+            },
+            "dia2": {
+                "titulo": "Andre Dag",
+                "actividades": [
+                "Frokost og besøk til Vista Alegre med en jungelvandring.",
+                "Observasjon av flora, fauna og tradisjonell piranhafiske.",
+                "Typisk lunsj og tilbake til byen."
+                ]
+            },
+            "dia3": {
+                "titulo": "Tredje Dag",
+                "actividades": [
+                "Båtutforskning av Caballo Cocha-lagunet.",
+                "Observasjon av rosa delfiner og lokale fugler.",
+                "Frokost om bord og typisk lunsj etter turen."
+                ]
+            }
+        }
+    },
+    "nota": {
+        "titulo": "Merk",
+        "contenido": "Passasjermottak skjer på flyplassene i Iquitos (Peru) eller Leticia (Colombia). Transport vil være via Amazonas-elven med glidende båter til Caballo Cocha. Et stort Amazonas-eventyr!"
+    },
+    "sugerencias": {
+        "titulo": "Forslag til turister",
+        "lista": [
+            "Regnponchoer",
+            "Myggmiddel",
+            "Gummistøvler for turer",
+            "Lommelykt og batterier",
+            "Badetøy og komfortable klær for klimaet",
+            "Personlige medisiner",
+            "Angi kostholdsrestriksjoner",
+            "Oppgi returflydato og nummer"
+        ]
+    },
+    "boton": {
+        "texto": "Gå til Hjemmesiden"
     }
+  },
+  "promociones": {
+    "titulo": "Kampanjer",
+    "descuento": "Rabatt",
+    "precioOriginal": "Originalpris",
+    "precioFinal": "Slutpris",
+    "fechaInicio": "Startdato",
+    "fechaFin": "Sluttdato",
+    "fechaNoDisponible": "Dato ikke tilgjengelig"
+  },
+  "contacto": {
+    "titulo": "Kontakter",
+    "informacionWhatsApp": "For å be om informasjon, send en WhatsApp-melding med den informasjonen du trenger.",
+    "infoTours": "Informasjon om Tours Caballo Cocha:",
+    "whatsapp1": "+51 926 245191",
+    "infoPaquetes": "Informasjon om Pakker og Flybilletter:",
+    "whatsapp2": "+51 917 365332",
+    "siguenosRedes": "Følg oss på sosiale medier",
+    "irPaginaPrincipal": "Gå til Hjemmesiden"
+  }
 }
