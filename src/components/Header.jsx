@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { HiMenu } from "react-icons/hi";
 import LanguageSwitcher from '../components/LanguageSwitcher';
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const { t } = useTranslation("header");
@@ -24,7 +24,6 @@ const Header = () => {
 
           <div className="flex items-center space-x-4">
             <LanguageSwitcher />
-            {/* Botón de menú para móviles */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
@@ -36,7 +35,6 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Menú de navegación */}
           <div className={`w-full md:block md:w-auto ${isOpen ? 'block bg-gray-700' : 'hidden'} transition-all duration-300 ease-in-out`}>
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 space-y-2 md:flex-row md:space-x-8 md:mt-0 md:space-y-0 bg-gray-50 md:bg-transparent dark:bg-gray-800 md:dark:bg-gray-900 rounded-lg shadow-md">
               <li><Link to="/" onClick={closeMenus} className="block py-2 px-3 text-white md:text-gray-300 hover:text-yellow-200">{t("home")}</Link></li>
@@ -62,16 +60,19 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Modal */}
+      {/* Modal responsive */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative p-4 w-full max-w-2xl bg-white rounded-lg shadow-lg dark:bg-gray-700">
-            {/* Modal header */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-600">
-              <h3 className="text-xl font-semibold text-white">{t("about")}</h3>
+          <div className="relative bg-white dark:bg-gray-700 rounded-lg shadow-lg w-full sm:w-full sm:max-w-[750px] max-w-full max-h-[90vh] overflow-y-auto overflow-x-hidden">
+            
+            {/* Header */}
+            <div className="w-full flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-600">
+              <h3 className="text-xl font-semibold w-full text-gray-900 dark:text-white text-center sm:text-left">
+                {t("about")}
+              </h3>
               <button
                 onClick={closeMenus}
-                className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1l6 6m0 0l6 6M7 7l6-6M7 7L1 13"/>
@@ -79,23 +80,22 @@ const Header = () => {
                 <span className="sr-only">{t("cerrarModal")}</span>
               </button>
             </div>
-
-            {/* Modal body */}
-            <div className="p-4 space-y-4">
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400 text-justify">
+      
+            {/* Content */}
+            <div className="p-4 space-y-4 w-full max-w-[639px] overflow-y-auto max-h-[70vh]">
+              <p className="text-base leading-relaxed w-full max-w-[639px] text-gray-500 dark:text-gray-400 text-justify break-words">
                 {t("modalText1")}
-                <br />
               </p>
-              <p className="text-base text-gray-500 dark:text-gray-400 text-justify">
+              <p className="text-base leading-relaxed w-full max-w-[639px] text-gray-500 dark:text-gray-400 text-justify break-words">
                 {t("modalText2")}
               </p>
             </div>
-
-            {/* Modal footer */}
-            <div className="flex items-center p-4 border-t border-gray-200 rounded-b dark:border-gray-600">
+      
+            {/* Footer */}
+            <div className="flex items-center p-4 border-t border-gray-200 rounded-b dark:border-gray-600 w-full justify-end">
               <button
                 onClick={closeMenus}
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full sm:w-auto"
               >
                 {t("cerrar")}
               </button>
