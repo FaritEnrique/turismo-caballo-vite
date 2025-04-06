@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from "react-markdown";
+import { useTranslation } from 'react-i18next';
 
 const LocalidadesPage = () => {
+  const { t } = useTranslation('localidades');
   const [showFullText, setShowFullText] = useState({ iquitos: false, caballoCocha: false });
 
   const toggleText = (city) => {
@@ -22,13 +24,14 @@ const LocalidadesPage = () => {
           className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300"
           onClick={() => toggleText(city)}
         >
-          {isExpanded ? 'Ver menos' : 'Ver más'}
+          {isExpanded ? t('verMenos') : t('verMas')}
         </button>
       </div>
     );
   };
 
-  const iquitosText = `
+  const iquitosText = t('iquitos.contenido');
+  /* const iquitosText = `
   Iquitos está ubicado en el noreste de Perú, al noreste de departamento de Loreto, y en el extremo sur de la Provincia de Maynas.
   Es considerada la capital del Departamento de Loreto y la ciudad tiene una extensión de 368,9 km², abarcando parte de los 
   distritos de Belén, Punchana y San Juan Bautista.  
@@ -115,9 +118,10 @@ const LocalidadesPage = () => {
   la cosecha del caucho. Las semillas del Hevea brasiliensis habían sido llevadas subrepticiamente. Esto dejó 
   nuevamente a Iquitos en la pobreza y aislamiento de las ciudades selváticas, así como el abandono de fastuosos 
   edificios de estilo europeo.  
-  `;
+  `; */
 
-  const caballoCochaText = `Caballococha es una ciudad peruana capital del distrito de Ramón Castilla y a la vez de la provincia de Mariscal 
+  const caballoCochaText = t('caballococha.contenido');
+  /* const caballoCochaText = `Caballococha es una ciudad peruana capital del distrito de Ramón Castilla y a la vez de la provincia de Mariscal 
   Ramón Castilla en el departamento de Loreto. Se encuentra en el Noreste del país, sobre la orilla derecha del río 
   Amazonas en la quebrada de Caballococha, muy cerca al trapecio amazónico; se puede decir esta ciudad pequeña como 
   puerto de entrada (y salida) al (o del) Perú ya que esta a menos de 50 km de Santa Rosa (Perú), Leticia, (Colombia) 
@@ -189,42 +193,42 @@ const LocalidadesPage = () => {
   sostenido por el desarrollo material y espiritual del pueblo y de los alrededores. Su semilla ha producido 
   ya dos vocaciones sacerdotales y agustinas. Dos jóvenes seminaristas prosiguen sus estudios en el seminario 
   Santo Toribio de Lima.
-  `;
+  `; */
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-6 flex flex-col items-center">
-      <h1 className="text-5xl font-extrabold text-center text-teal-700 mb-8 tracking-wide drop-shadow-lg">Ciudades Principales</h1>
+      <h1 className="text-5xl font-extrabold text-center text-teal-700 mb-8 tracking-wide drop-shadow-lg">{t('titulo')}</h1>
       <section className="p-6 bg-white rounded-lg shadow-lg w-full max-w-4xl mb-8">
         <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-          Considerando el alcance de nuestra empresa en sus actividades, tenemos como ciudades importantes las siguientes:
+          {t('texto')}
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
-          <a href="#iquitos" className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-800 transition">Ciudad de Iquitos</a>
-          <a href="#caballoCocha" className="bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-800 transition">Ciudad de Caballo Cocha</a>
+          <a href="#iquitos" className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-800 transition">{t('iquitos.titulo')}</a>
+          <a href="#caballoCocha" className="bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-800 transition">{t('caballococha.titulo')}</a>
         </div>
       </section>
       <section id="iquitos" className="p-6 bg-white shadow-xl rounded-2xl my-4 w-full max-w-3xl">
-        <h2 className="text-3xl font-semibold text-teal-600 mb-6">Ciudad de Iquitos</h2>
+        <h2 className="text-3xl font-semibold text-teal-600 mb-6">{t('iquitos.titulo')}</h2>
         <img
           src="https://i.ibb.co/TBgb2ZTh/Ciudad-Iquitos.png"
           alt="Ciudad de Iquitos"
           className="w-1/2 md:w-1/3 h-auto object-cover rounded-xl border-4 border-teal-200 shadow-md mb-6 mx-auto" />
           {renderText(iquitosText, 'iquitos')}
         <div className="flex gap-4 mt-6 justify-center">
-          <Link to="/" className="bg-blue-600 text-white px-5 py-3 rounded-lg shadow-md hover:bg-blue-800 transition">Ir a página principal</Link>
-          <Link to="https://es.wikipedia.org/wiki/Iquitos" target="_blank" rel="noopener noreferrer" className="bg-gray-600 text-white px-5 py-3 rounded-lg shadow-md hover:bg-gray-800 transition">Conocer más</Link>
+          <Link to="/" className="bg-blue-600 text-white px-5 py-3 rounded-lg shadow-md hover:bg-blue-800 transition">{t('boton1')}</Link>
+          <Link to="https://es.wikipedia.org/wiki/Iquitos" target="_blank" rel="noopener noreferrer" className="bg-gray-600 text-white px-5 py-3 rounded-lg shadow-md hover:bg-gray-800 transition">{t('boton2')}</Link>
         </div>
       </section>
       <section id="caballoCocha" className="p-6 bg-white shadow-xl rounded-2xl my-4 w-full max-w-3xl">
-        <h2 className="text-3xl font-semibold text-teal-600 mb-6">Ciudad de Caballo Cocha</h2>
+        <h2 className="text-3xl font-semibold text-teal-600 mb-6">{t('caballococha.titulo')}</h2>
         <img
           src="https://i.ibb.co/4RtKHjD2/Ciudad-Caballococha.png"
           alt="Ciudad de Caballo Cocha"
           className="w-1/2 md:w-1/3 h-auto object-cover rounded-xl border-4 border-teal-200 shadow-md mb-6 mx-auto" />
         {renderText(caballoCochaText, 'caballoCocha')}
         <div className="flex gap-4 mt-6 justify-center">
-          <Link to="/" className="bg-blue-600 text-white px-5 py-3 rounded-lg shadow-md hover:bg-blue-800 transition">Ir a página principal</Link>
-          <Link to="https://es.wikipedia.org/wiki/Caballococha" target="_blank" rel="noopener noreferrer" className="bg-gray-600 text-white px-5 py-3 rounded-lg shadow-md hover:bg-gray-800 transition">Conocer más</Link>
+          <Link to="/" className="bg-blue-600 text-white px-5 py-3 rounded-lg shadow-md hover:bg-blue-800 transition">{t('boton1')}</Link>
+          <Link to="https://es.wikipedia.org/wiki/Caballococha" target="_blank" rel="noopener noreferrer" className="bg-gray-600 text-white px-5 py-3 rounded-lg shadow-md hover:bg-gray-800 transition">{t('boton2')}</Link>
         </div>
       </section>
     </div>
