@@ -31,14 +31,13 @@ const Header = () => {
               className="bg-teal-600 hover:bg-teal-700 mr-2 focus:outline-none focus:ring-2 focus:ring-teal-500 inline-flex items-center justify-center p-2 w-12 h-12 text-white rounded-lg md:hidden"
               aria-label="Menú"
               aria-expanded={isOpen}
-              //style={{ marginRight: '5px' }}
             >
               <HiMenu size={30} />
             </button>
           </div>
 
           {/* Menú de navegación */}
-          <div className={`w-full md:block md:w-auto ${isOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
+          <div className={`w-full md:block md:w-auto ${isOpen ? 'block bg-gray-700' : 'hidden'} transition-all duration-300 ease-in-out`}>
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 space-y-2 md:flex-row md:space-x-8 md:mt-0 md:space-y-0 bg-gray-50 md:bg-transparent dark:bg-gray-800 md:dark:bg-gray-900 rounded-lg shadow-md">
               <li><Link to="/" onClick={closeMenus} className="block py-2 px-3 text-white md:text-gray-300 hover:text-yellow-200">{t("home")}</Link></li>
               <hr className="md:hidden border-gray-200 dark:border-gray-600" />
