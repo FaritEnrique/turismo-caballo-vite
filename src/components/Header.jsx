@@ -63,7 +63,7 @@ const Header = () => {
       {/* Modal responsive */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative bg-white dark:bg-gray-700 rounded-lg shadow-lg w-full max-w-[639] sm:max-w-[750px] md:max-w-[85vw] lg:max-w-[80vw] max-h-[90vh] overflow-y-auto overflow-x-hidden">
+          <div className="relative bg-white dark:bg-gray-700 rounded-lg shadow-lg w-full max-w-[90vw] sm:max-w-[750px] md:max-w-[85vw] lg:max-w-[80vw] max-h-[90vh] overflow-y-auto overflow-x-hidden">
             
             {/* Header */}
             <div className="w-full items-center p-4 border-b border-gray-200 dark:border-gray-600">
