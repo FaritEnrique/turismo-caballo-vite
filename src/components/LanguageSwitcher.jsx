@@ -23,7 +23,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-50" style={{ bottom: '3rem' }}>
+    <div className="fixed bottom-6 left-6 z-50" style={{ bottom: 'calc(2vh + 1rem)' }}>
       {/* Botón flotante */}
       <button
         onClick={() => setIsOpen(!isOpen)}
