@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
+  const { t } = useTranslation("header");
   const [isOpen, setIsOpen] = useState(false);
   const [animate, setAnimate] = useState(false);
 
@@ -22,7 +23,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className="fixed bottom-6 left-6 z-50" style={{ bottom: '3rem' }}>
       {/* Botón flotante */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -31,7 +32,7 @@ const LanguageSwitcher = () => {
         } hover:scale-110`}
       >
         <FaGlobe className="text-blue-700 w-6 h-6" />
-        <span className="text-gray-900 font-semibold">Idiomas</span>
+        <span className="text-gray-900 font-semibold">{t("languages")}</span>
       </button>
 
       {/* Menú desplegable hacia arriba */}

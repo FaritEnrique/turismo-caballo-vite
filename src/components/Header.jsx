@@ -35,7 +35,7 @@ const Header = () => {
             </button>
           </div>
 
-          <div className={`w-full md:block md:w-auto ${isOpen ? 'block bg-gray-700' : 'hidden'} transition-all duration-300 ease-in-out`}>
+          <div className={`w-full md:block md:w-auto ${isOpen ? 'block max-w-[600px] bg-gray-700' : 'hidden'} transition-all duration-300 ease-in-out`}>
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 space-y-2 md:flex-row md:space-x-8 md:mt-0 md:space-y-0 bg-gray-50 md:bg-transparent dark:bg-gray-800 md:dark:bg-gray-900 rounded-lg shadow-md">
               <li><Link to="/" onClick={closeMenus} className="block py-2 px-3 text-white md:text-gray-300 hover:text-yellow-200">{t("home")}</Link></li>
               <hr className="md:hidden border-gray-200 dark:border-gray-600" />
@@ -63,30 +63,21 @@ const Header = () => {
       {/* Modal responsive */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative bg-white dark:bg-gray-700 rounded-lg shadow-lg w-full sm:w-full sm:max-w-[750px] max-w-full max-h-[90vh] overflow-y-auto overflow-x-hidden">
+          <div className="relative bg-white dark:bg-gray-700 rounded-lg shadow-lg w-full max-w-[639] sm:max-w-[750px] md:max-w-[85vw] lg:max-w-[80vw] max-h-[90vh] overflow-y-auto overflow-x-hidden">
             
             {/* Header */}
-            <div className="w-full flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-600">
-              <h3 className="text-xl font-semibold w-full text-gray-900 dark:text-white text-center sm:text-left">
+            <div className="w-full items-center p-4 border-b border-gray-200 dark:border-gray-600">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white text-center sm:text-left">
                 {t("about")}
               </h3>
-              <button
-                onClick={closeMenus}
-                className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-              >
-                <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1l6 6m0 0l6 6M7 7l6-6M7 7L1 13"/>
-                </svg>
-                <span className="sr-only">{t("cerrarModal")}</span>
-              </button>
             </div>
       
             {/* Content */}
-            <div className="p-4 space-y-4 w-full max-w-[639px] overflow-y-auto max-h-[70vh]">
-              <p className="text-base leading-relaxed w-full max-w-[639px] text-gray-500 dark:text-gray-400 text-justify break-words">
+            <div className="p-4 space-y-4 w-full overflow-y-auto max-h-[70vh]">
+              <p className="text-base leading-relaxed w-full text-gray-500 dark:text-gray-400 text-justify break-words">
                 {t("modalText1")}
               </p>
-              <p className="text-base leading-relaxed w-full max-w-[639px] text-gray-500 dark:text-gray-400 text-justify break-words">
+              <p className="text-base leading-relaxed w-full text-gray-500 dark:text-gray-400 text-justify break-words">
                 {t("modalText2")}
               </p>
             </div>

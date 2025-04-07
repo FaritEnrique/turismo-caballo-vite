@@ -1,8 +1,7 @@
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from "../components/LanguageSwitcher";
-import { Trans } from "react-i18next";
+
 
 const Footer = () => {
   const { t } = useTranslation("footer");
