@@ -4,11 +4,13 @@ import { Outlet } from "react-router-dom"
 
 const Layout = () => {
     return (
-        <>
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-800">
             <Header />
-            <Outlet />
+            <main className="flex-grow">
+                <Outlet />
+            </main>
             <Footer />
-        </>
+        </div>
     )
 }
 

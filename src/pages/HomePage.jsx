@@ -109,7 +109,7 @@ const HomePage = () => {
     };
 
     return (
-        <div className="bg-gray-200 mb-4">
+        <main className="bg-gray-200 mb-4">
             {/* Sección de Bienvenida */}
             <section className="max-w-[1300px] mx-auto rounded-xl p-4 mb-4">
                 <div className="mb-4">
@@ -126,18 +126,12 @@ const HomePage = () => {
                 <div className="flex flex-col lg:flex-row justify-center items-center gap-4">
                     {/* Logo */}
                     <div className="w-full md:w-auto">
-                        <img
-                            src="/images/logo_cuadrado.png"
-                            alt="Logo Turismo Caballo Cocha"
-                            className="object-contain w-48 md:w-64 mx-auto" // Ajuste del ancho del logo
+                        <img src="/images/logo_cuadrado.png" alt="Logo Turismo Caballo Cocha" loading="lazy" className="object-contain w-48 md:w-64 mx-auto" // Ajuste del ancho del logo
                         />
                     </div>
                     {/* Portada */}
                     <div className="w-full rounded-xl">
-                        <img
-                            src="https://i.postimg.cc/3NjTKyZw/Portada.jpg"
-                            alt="Plaza Caballo Cocha"
-                            className="w-full rounded-xl"
+                        <img src="https://i.postimg.cc/3NjTKyZw/Portada.jpg" alt="Plaza Caballo Cocha" loading="lazy" className="w-full rounded-xl"
                         />
                     </div>
                 </div>
@@ -150,7 +144,7 @@ const HomePage = () => {
                     <div className="flex justify-center gap-4 bg-white py-4">
                         <button
                             onClick={() => handleShare("whatsapp")}
-                            className="flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-green-500 hover:bg-green-600 transition-all duration-300"
+                            className="flex items-center gap-2 px-6 py-2 rounded-lg text-white bg-green-500 hover:bg-green-600 transition-all duration-300"
                         >
                             <FaWhatsappSquare size={30} />
                             <span className="hidden sm:block">Compartir en WhatsApp</span>
@@ -185,7 +179,7 @@ const HomePage = () => {
                 </ul>
             </div>
             </section>
-            <section className="max-w-[1300px] mx-auto rounded-xl px-4 block sm:hidden">
+            <section className="max-w-[1300px] mx-auto rounded-xl px-6 block sm:hidden">
                 <div className="w-full relative">
                     <div className="relative w-full overflow-hidden rounded-lg shadow-lg">
                         <img src={slides[currentSlide]} className="w-full transition-transform duration-700 ease-in-out" alt="Imagen Carrusel" />
@@ -517,7 +511,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
     );
 };
 
