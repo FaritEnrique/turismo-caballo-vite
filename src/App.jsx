@@ -16,6 +16,7 @@ import GaleriaPage from './pages/GaleriaPage';
 import LoginForm from './pages/LoginPage';
 import AdminPage from './pages/AdminPage';
 import HomePageTrad from './pages/HomePageTrad';
+import NewHomePage from './pages/NewHomePage';
 
 const App = () => {
   return (
@@ -23,7 +24,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<HomePageTrad />} />
+            <Route index element={<NewHomePage />} />
             <Route path="/contacto" element={<ContactoPage />} />
             <Route path="/fauna" element={<FaunaPage />} />
             <Route path="/flora" element={<FloraPage />} />

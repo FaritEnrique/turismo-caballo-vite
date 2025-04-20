@@ -179,7 +179,7 @@ const HomePage = () => {
                     </ul>
                 </div>
             </section>
-            <section className="w-full px-2 sm:px-4 md:px-6 py-4 max-w-[1300px] mx-auto">
+            <section className="w-full px-2 sm:px-4 md:px-6 py-4 max-w-[1300px] mx-auto border-8 border-green-600 rounded-xl bg-white shadow-md mb-4">  
                 <Carrusel3D />
             </section>
 

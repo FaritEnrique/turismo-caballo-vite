@@ -75,41 +75,43 @@ const Header = () => {
 
       {/* MODAL CON Z-50 Y FONDO CORRECTO */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
-          <div className="relative bg-white dark:bg-gray-700 rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
-            {/* Botón cerrar arriba derecha */}
-            <button
-              onClick={closeMenus}
-              className="absolute top-2 right-2 text-gray-700 dark:text-gray-200 hover:text-red-500"
-            >
-              ✕
-            </button>
-
-            {/* Encabezado */}
-            <div className="p-4 border-b border-gray-200 dark:border-gray-600">
-              <h3 className="text-xl font-semibold text-center text-gray-900 dark:text-white">
-                {t("about")}
-              </h3>
-            </div>
-
-            {/* Contenido */}
-            <div className="p-4 space-y-4">
-              <p className="text-base text-gray-600 dark:text-gray-300 text-justify">
-                {t("modalText1")}
-              </p>
-              <p className="text-base text-gray-600 dark:text-gray-300 text-justify">
-                {t("modalText2")}
-              </p>
-            </div>
-
-            {/* Footer */}
-            <div className="flex justify-end p-4 border-t border-gray-200 dark:border-gray-600">
+        <div className='max-w-[1300px]'>
+          <div className="w-full fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+            <div className="relative bg-white dark:bg-gray-700 rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+              {/* Botón cerrar arriba derecha */}
               <button
                 onClick={closeMenus}
-                className="bg-blue-700 hover:bg-blue-800 text-white font-medium rounded-lg text-sm px-5 py-2.5"
+                className="absolute top-2 right-2 text-gray-700 dark:text-gray-200 hover:text-red-500"
               >
-                {t("cerrar")}
+                ✕
               </button>
+
+              {/* Encabezado */}
+              <div className="w-full p-4 border-b border-gray-200 dark:border-gray-600">
+                <h3 className="text-xl font-semibold text-center text-gray-900 dark:text-white">
+                  {t("about")}
+                </h3>
+              </div>
+
+              {/* Contenido */}
+              <div className="p-4 space-y-4">
+                <p className="text-base text-gray-600 dark:text-gray-300 text-justify">
+                  {t("modalText1")}
+                </p>
+                <p className="text-base text-gray-600 dark:text-gray-300 text-justify">
+                  {t("modalText2")}
+                </p>
+              </div>
+
+              {/* Footer */}
+              <div className="flex justify-end p-4 border-t border-gray-200 dark:border-gray-600">
+                <button
+                  onClick={closeMenus}
+                  className="bg-blue-700 hover:bg-blue-800 text-white font-medium rounded-lg text-sm px-5 py-2.5"
+                >
+                  {t("cerrar")}
+                </button>
+              </div>
             </div>
           </div>
         </div>
