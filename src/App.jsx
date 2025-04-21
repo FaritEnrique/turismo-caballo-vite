@@ -17,6 +17,7 @@ import LoginForm from './pages/LoginPage';
 import AdminPage from './pages/AdminPage';
 import HomePageTrad from './pages/HomePageTrad';
 import NewHomePage from './pages/NewHomePage';
+import NosotrosPage from './pages/NosotrosPage';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<NewHomePage />} />
+            <Route path="/nosotros" element={<NosotrosPage />} />
             <Route path="/contacto" element={<ContactoPage />} />
             <Route path="/fauna" element={<FaunaPage />} />
             <Route path="/flora" element={<FloraPage />} />
