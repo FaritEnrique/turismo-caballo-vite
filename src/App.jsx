@@ -2,7 +2,6 @@ import React from 'react'
 import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './components/Layout';
-import HomePage from './pages/HomePage';
 import ContactoPage from './pages/ContactoPage';
 import { HelmetProvider } from 'react-helmet-async';
 import FaunaPage from './pages/FaunaPage';
@@ -15,9 +14,10 @@ import PromocionesPage from './pages/PromocionesPage';
 import GaleriaPage from './pages/GaleriaPage';
 import LoginForm from './pages/LoginPage';
 import AdminPage from './pages/AdminPage';
-import HomePageTrad from './pages/HomePageTrad';
 import NewHomePage from './pages/NewHomePage';
 import NosotrosPage from './pages/NosotrosPage';
+import GestionGaleriaPage from './pages/GestionGaleriaPage';
+import GestionPromocionesPage from './pages/GestionPromocionesPages';
 
 const App = () => {
   return (
@@ -38,6 +38,8 @@ const App = () => {
             <Route path="/galeria" element={<GaleriaPage />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/admin" element={<AdminPage />} />
+            <Route path="/gestion-galeria" element={<GestionGaleriaPage />} />
+            <Route path="/gestion-promociones" element={<GestionPromocionesPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
