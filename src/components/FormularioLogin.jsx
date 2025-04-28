@@ -1,3 +1,4 @@
+import { useAuthContext, registerUser, loginUser, logoutUser, resetPassword } from '../hooks/useAuth.jsx';
 import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -5,7 +6,6 @@ import { useState } from "react";
 import { auth } from "../services/firebase";
 
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
-import { resetPassword } from "../hooks/useAuth";
 import { toast, Toaster } from 'react-hot-toast'; // Usamos 'react-hot-toast' para las notificaciones
 import Modal from 'react-modal';
 

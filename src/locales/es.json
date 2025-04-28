@@ -179,6 +179,14 @@
         "infoPaquetes": "Información Paquetes y Pasajes Aéreos:",
         "whatsapp2": "+51 917 365332",
         "siguenosRedes": "Síguenos en redes sociales",
+        "tituloFormulario": "Formulario de Contacto",
+        "nombre": "Nombre",
+        "correo": "Correo Electrónico",
+        "mensaje": "Mensaje",
+        "enviar": "Enviar",
+        "enviando": "Enviando...",
+        "mensajeExito": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto.",
+        "mensajeError": "Hubo un error al enviar el formulario. Inténtalo nuevamente.",
         "irPaginaPrincipal": "Ir a Página Principal"
     },
     "localidades": {

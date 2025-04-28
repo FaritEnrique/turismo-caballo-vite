@@ -179,6 +179,14 @@
         "infoPaquetes": "Packages and Air Tickets Information:",
         "whatsapp2": "+51 917 365332",
         "siguenosRedes": "Follow us on social media",
+        "tituloFormulario": "Contact Us via Form",
+        "nombre": "Name",
+        "correo": "Email",
+        "mensaje": "Message",
+        "enviar": "Send",
+        "enviando": "Sending...",
+        "mensajeExito": "Thank you for your message! We will get in touch soon.",
+        "mensajeError": "There was an error submitting the form. Please try again.",
         "irPaginaPrincipal": "Go to Homepage"
     },
     "localidades": {

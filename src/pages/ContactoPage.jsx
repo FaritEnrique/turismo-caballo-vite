@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import FormularioContacto from '../components/FormularioContacto';
 
 const ContactPage = () => {
   const { t } = useTranslation('contacto'); // Usa el namespace 'contacto'
@@ -61,6 +62,12 @@ const ContactPage = () => {
               <FaYoutube className="text-red-600 text-4xl hover:scale-110 transition-transform" />
             </Link>
           </div>
+        </section>
+
+        {/* Formulario de Contacto */}
+        <section className="mt-10 bg-gray-300 border-2 border-green-600 rounded-lg p-4 shadow-lg">
+          {/*<h3 className="text-2xl font-bold text-teal-900 mb-4">{t('contactanosFormulario')}</h3>*/}
+          <FormularioContacto />
         </section>
 
         {/* Botón */}

@@ -20,6 +20,13 @@ const AdminPage = () => {
           >
             Promociones
           </Link>
+          {/* Nuevo botón para gestionar mensajes */}
+          <Link 
+            to="/gestion-mensajes" 
+            className="block w-full text-center bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300"
+          >
+            Mensajes
+          </Link>
         </div>
       </div>
     </div>

@@ -179,6 +179,14 @@
     "infoPaquetes": "Informasjon om Pakker og Flybilletter:",
     "whatsapp2": "+51 917 365332",
     "siguenosRedes": "Følg oss på sosiale medier",
+    "tituloFormulario": "Kontaktskjema",
+    "nombre": "Navn",
+    "correo": "E-post",
+    "mensaje": "Melding",
+    "enviar": "Sende",
+    "enviando": "Sender...",
+    "mensajeExito": "Takk for meldingen din! Vi tar snart kontakt.",
+    "mensajeError": "Det oppstod en feil ved innsending av skjemaet. Vennligst prøv igjen.",
     "irPaginaPrincipal": "Gå til Hjemmesiden"
   },
   "localidades": {
