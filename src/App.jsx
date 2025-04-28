@@ -21,12 +21,34 @@ import GestionGaleriaPage from './pages/GestionGaleriaPage';
 import GestionPromocionesPage from './pages/GestionPromocionesPages';
 import MensajesPage from './pages/MensajesPage';
 import ProtectedRoute from './components/ProtectedRoute';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
     <AuthProvider>
       <HelmetProvider>
         <BrowserRouter>
+          <Toaster
+            position="top-right"
+            reverseOrder={false}
+            toastOptions={{
+              duration: 5000,
+              style: {
+                background: '#363636',
+                color: '#fff',
+              },
+              success: {
+                style: {
+                  background: 'green',
+                },
+              },
+              error: {
+                style: {
+                  background: 'red',
+                },
+              },
+            }}
+          />
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<NewHomePage />} />

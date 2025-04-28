@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import useFormulario from '../hooks/useFormulario';
-import emailjs from '@emailjs/browser';  // Usar el nuevo SDK
+import emailjs from '@emailjs/browser';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { toast } from 'react-hot-toast';
 
 const MensajesPage = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -39,15 +41,21 @@ const MensajesPage = () => {
   }, [isAuthenticated, fetchFormularios]);
 
   // Función para enviar el correo usando EmailJS
-  const enviarCorreo = async (email, mensajeRespuesta) => {
+  const enviarCorreo = async (email, mensajeRespuesta, nombre) => {
     const templateParams = {
-      to_email: email,  // Correo del destinatario
-      subject: 'Respuesta a tu mensaje', // Asunto del correo
+      name: 'Darinka Travel Turismo Caballo Cocha',
+      email: email,
+      subject: 'Respuesta a tu mensaje',
       message: mensajeRespuesta, // Cuerpo del mensaje
     };
 
     try {
-      const response = await emailjs.send('your_service_id', 'your_template_id', templateParams, 'your_user_id');
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_USER_ID
+      );
       console.log('Correo enviado:', response);
       return true; // Si el correo se envía correctamente
     } catch (error) {
@@ -56,21 +64,19 @@ const MensajesPage = () => {
     }
   };
 
-  const handleResponder = async (docId, email) => {
+  const handleResponder = async (docId, email, nombre) => {
     const respuestaTexto = respuesta[docId]?.trim();
     if (!respuestaTexto) {
-      alert("Por favor, ingrese una respuesta válida.");
+      toast.error("Por favor, ingrese una respuesta válida.");
       return;
     }
-
+  
     try {
-      // Enviar correo
-      const correoEnviado = await enviarCorreo(email, respuestaTexto);
+      const correoEnviado = await enviarCorreo(email, respuestaTexto, nombre);
       if (!correoEnviado) return;
-
-      // Actualizar el formulario en Firebase
-      await editarFormulario(docId, { respondido: true, respuesta: respuestaTexto });
-
+  
+      await editarFormulario({ respondido: true, respuesta: respuestaTexto }, docId);
+  
       setFormularios(prevFormularios =>
         prevFormularios.map(formulario =>
           formulario.docId === docId
@@ -78,14 +84,18 @@ const MensajesPage = () => {
             : formulario
         )
       );
-
+  
       setRespuesta(prev => {
         const updated = { ...prev };
         delete updated[docId];
         return updated;
       });
+  
+      // Mostrar notificación de éxito
+      toast.success("Respuesta enviada correctamente.");
     } catch (error) {
       console.error('Error al responder el mensaje:', error);
+      toast.error("Hubo un error al enviar la respuesta.");
     }
   };
 
@@ -96,12 +106,14 @@ const MensajesPage = () => {
         setFormularios(prevFormularios =>
           prevFormularios.filter(formulario => formulario.docId !== docId)
         );
-        console.log('Formulario eliminado');
+        toast.success("Formulario eliminado correctamente.");
       } else {
         console.error(result.message);
+        toast.error("Hubo un problema al eliminar el formulario.");
       }
     } catch (error) {
       console.error('Error al eliminar el formulario:', error);
+      toast.error("Hubo un error al eliminar el formulario.");
     }
   };
 
@@ -145,7 +157,7 @@ const MensajesPage = () => {
                   />
                   <div className="flex justify-between">
                     <button
-                      onClick={() => handleResponder(formulario.docId, formulario.email)}
+                      onClick={() => handleResponder(formulario.docId, formulario.email, formulario.nombre)}
                       className="bg-teal-700 hover:bg-teal-800 text-white font-semibold py-2 px-6 rounded transition duration-300"
                     >
                       Responder
