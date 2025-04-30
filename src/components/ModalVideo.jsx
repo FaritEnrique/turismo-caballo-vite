@@ -1,38 +1,67 @@
 import React from "react";
+import Modal from "react-modal";
+import YouTube from "react-youtube";
+
+// Estilos de animación para el modal
+const customStyles = {
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    zIndex: 50,
+    transition: "opacity 300ms ease-in-out",
+  },
+  content: {
+    maxWidth: "90%",
+    width: "800px",  // Establecer el ancho máximo del modal
+    maxHeight: "90%",
+    height: "auto",  // Ajustar automáticamente la altura
+    border: "none",
+    background: "white",
+    borderRadius: "0.75rem",
+    padding: "0",
+    overflow: "hidden",
+    transition: "transform 300ms ease-in-out",
+    margin: "auto", // Esto debería centrar el modal horizontal y verticalmente
+    position: "relative", // Esto es importante para que el modal se posicione correctamente
+  },
+};
+
+// Necesario para accesibilidad
+Modal.setAppElement("#root");
 
 const ModalVideo = ({ showModal, setShowModal }) => {
-  if (!showModal) return null;
+  const handleVideoEnd = () => {
+    setShowModal(false);
+  };
+
+  const opts = {
+    width: "100%",
+    height: "450",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
 
   return (
-    <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4 animate-fadeIn"
-      onClick={() => setShowModal(false)}
+    <Modal
+      isOpen={showModal}
+      onRequestClose={() => setShowModal(false)}
+      style={customStyles}
+      closeTimeoutMS={300} // Suaviza la salida
+      contentLabel="Video Modal"
     >
-      <div
-        className="bg-white rounded-lg shadow-lg w-full max-w-3xl transform scale-95 animate-scaleUp"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex justify-end p-2">
-          <button
-            className="text-white bg-red-600 hover:bg-red-700 px-3 py-1 rounded-full"
-            onClick={() => setShowModal(false)}
-          >
-            X
-          </button>
-        </div>
+      <div className="relative">
+        {/* Botón de cierre */}
+        <button
+          className="absolute top-2 right-2 text-white bg-red-600 hover:bg-red-700 px-3 py-1 rounded-full z-10"
+          onClick={() => setShowModal(false)}
+        >
+          X
+        </button>
 
-        {/* Contenedor responsivo para video */}
-        <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-          <iframe
-            className="absolute top-0 left-0 w-full h-full rounded-b-lg border-0"
-            src="https://www.youtube.com/embed/cFoufhTlTKI"
-            title="YouTube video Santa Rosa del Caño"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </div>
+        {/* Video de YouTube */}
+        <YouTube videoId="cFoufhTlTKI" opts={opts} onEnd={handleVideoEnd} />
       </div>
-    </div>
+    </Modal>
   );
 };
 

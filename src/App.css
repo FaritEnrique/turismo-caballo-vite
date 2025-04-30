@@ -43,3 +43,13 @@ html, body {
 .read-the-docs {
   color: #888;
 }
+
+#_rht_toaster {
+  display: none !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}

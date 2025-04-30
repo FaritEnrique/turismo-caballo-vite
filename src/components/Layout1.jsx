@@ -4,7 +4,7 @@ import VideoSection from './VideoSection';
 
 const Layout1 = ({ children }) => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 rounded-xl min-h-[450px]">
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 bg-gray-400 p-2 rounded-xl min-h-[450px]">
       
       {/* Aside */}
       <div className="rounded-xl col-span-1 lg:col-span-2">

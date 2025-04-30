@@ -9,7 +9,7 @@ const VideoSection = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center">
+    <div className="w-full  flex flex-col items-center justify-center">
       {/* Contenedor de la imagen y el contenido centrado */}
       <div className="relative w-full bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
         <img
