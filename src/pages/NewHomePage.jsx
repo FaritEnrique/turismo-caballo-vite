@@ -396,6 +396,53 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
+            <section className="max-w-[1300px] bg-teal-600 mx-auto rounded-xl p-4 mt-4">
+                <h1 className="text-center font-bold text-lg sm:text-xl lg:text-2xl text-teal-800 p-4 rounded bg-white shadow-md">
+                    {t("tituloDestino")}
+                </h1>
+                <div className="gap-2 grid grid-cols-1 mt-4 md:grid-cols-2 lg:grid-cols-3 bg-gray-300 rounded-xl p-4">
+                    <div
+                        className="border p-2 shadow-md rounded-xl bg-white h-auto">
+                        <h2 className="font-bold text-center text-lg">{t("tituloDestino1")}</h2>
+                        <div>
+                            <img src="https://i.ibb.co/cKc3ZNvt/Waira-Selva-Hotel.png" alt="Waira Selva Hotel" className="rounded-xl object-cover" />
+                        </div>
+                        <p className="font-medium text-justify">
+                            {t("textoDestino1")}
+                        </p>
+                    </div>
+                    <div
+                        className="border p-2 bg-white shadow-md rounded-xl h-auto">
+                        <h2 className="font-bold text-center text-lg">{t("tituloDestino2")}</h2>
+                        <div>
+                            <img src="https://i.ibb.co/Z6MDYrLN/Hospedaje-El-Tigrillo.png" alt="Hospedaje El Tigrillo" className="rounded-xl object-cover" />
+                        </div>
+                        <p className="font-medium text-justify">
+                            {t("textoDestino2")}
+                        </p>
+                    </div>
+                    <div
+                        className="border p-2 bg-white shadow-md rounded-xl h-auto">
+                        <h2 className="font-bold text-center text-lg">{t("tituloDestino3")}</h2>
+                        <div>
+                            <img src="https://i.ibb.co/kg7yRN8k/Wikungo-Hotel.png" alt="Wikungo Hotel - Puerto Nariño" className="rounded-xl object-cover" />
+                        </div>
+                        <p className="font-medium text-justify">
+                            {t("textoDestino3")}
+                        </p>
+                    </div>
+                    <div
+                        className="border p-2 bg-white shadow-md rounded-xl h-auto">
+                        <h2 className="font-bold text-center text-lg">{t("tituloDestino4")}</h2>
+                        <div>
+                            <img src="https://i.ibb.co/dJrkDB3n/Yawira-House.png" alt="Yawira House - Leticia" className="rounded-xl object-cover" />
+                        </div>
+                        <p className="font-medium text-justify">
+                            {t("textoDestino4")}
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
