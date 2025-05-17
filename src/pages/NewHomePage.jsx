@@ -364,9 +364,9 @@ const HomePage = () => {
                     <div
                         ref={(el) => (itemsRef2.current[0] = el)}
                         className="border p-2 shadow-md rounded-xl bg-white h-auto">
-                        <h2 className="font-bold text-center text-lg">Piero Alejandro</h2>
+                        <h2 className="font-bold text-center text-lg">Matías</h2>
                         <div>
-                            <img src="/images/Piero.png" alt="Testimonio Turismo Iquitos - Caballococha" />
+                            <img src="/images/Piero.jpg" alt="Testimonio Turismo Iquitos - Caballococha" />
                         </div>
                         <p className="font-medium text-justify">
                             {t("testimonioText1.1")}
@@ -377,7 +377,7 @@ const HomePage = () => {
                         className="border p-2 bg-white shadow-md rounded-xl h-auto">
                         <h2 className="font-bold text-center text-lg">Débora</h2>
                         <div>
-                            <img src="/images/Debora.png" alt="Testimonio Turismo Iquitos - Caballococha" />
+                            <img src="/images/Debora.jpg" alt="Testimonio Turismo Iquitos - Caballococha" />
                         </div>
                         <p className="font-medium text-justify">
                             {t("testimonioText2.1")} <br /> {t("testimonioText2.2")}
@@ -386,9 +386,9 @@ const HomePage = () => {
                     <div
                         ref={(el) => (itemsRef2.current[2] = el)}
                         className="border p-2 bg-white shadow-md rounded-xl h-auto">
-                        <h2 className="font-bold text-center text-lg">Genaro</h2>
+                        <h2 className="font-bold text-center text-lg">Wicus</h2>
                         <div>
-                            <img src="/images/Genaro.jpeg" alt="Testimonio Turismo Iquitos - Caballococha" />
+                            <img src="/images/Wicus.jpg" alt="Testimonio Turismo Iquitos - Caballococha" />
                         </div>
                         <p className="font-medium text-justify">
                             {t("testimonioText3.1")} <br /> {t("testimonioText3.2")}

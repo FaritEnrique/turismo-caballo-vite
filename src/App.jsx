@@ -22,6 +22,7 @@ import GestionPromocionesPage from './pages/GestionPromocionesPages';
 import MensajesPage from './pages/MensajesPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Toaster } from 'react-hot-toast';
+import LandingPage from './pages/LandingPage';
 
 const App = () => {
   return (
@@ -63,6 +64,7 @@ const App = () => {
               <Route path="/promociones" element={<PromocionesPage />} />
               <Route path="/galeria" element={<GaleriaPage />} />
               <Route path="/login" element={<LoginForm />} />
+              <Route path="/landing" element={<LandingPage />} />
               <Route path="/admin" element={<ProtectedRoute><AdminPage /></ProtectedRoute>} />
               <Route path="/gestion-galeria" element={<ProtectedRoute><GestionGaleriaPage /></ProtectedRoute>} />
               <Route path="/gestion-promociones" element={<ProtectedRoute><GestionPromocionesPage /></ProtectedRoute>} />
