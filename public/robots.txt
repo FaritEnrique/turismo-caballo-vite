@@ -1,0 +1,6 @@
+# Permite que todos los bots accedan a todo el sitio
+User-agent: *
+Allow: /
+
+# Enlace al sitemap
+Sitemap: https://danikha-travel-turismo.com/sitemap.xml
